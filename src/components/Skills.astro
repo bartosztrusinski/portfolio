@@ -1,0 +1,45 @@
+---
+import Wrapper from './Wrapper.astro';
+
+const frontEndSkills = ['React', 'JavaScript', 'TypeScript', 'Next.js', 'Astro.js', 'TailwindCSS'];
+
+const backEndSkills = ['Node.js', 'Express.js', 'SQL', 'MongoDB'];
+
+const tools = ['Git', 'Webpack', 'Zod'];
+
+const skills = [
+  {
+    title: 'Front-End',
+    skills: frontEndSkills,
+  },
+  {
+    title: 'Back-End',
+    skills: backEndSkills,
+  },
+  {
+    title: 'Tools',
+    skills: tools,
+  },
+];
+---
+
+<section id='skills'>
+  <Wrapper>
+    <h2 class='text-2xl font-bold'>Skills</h2>
+    <p>Technologies and tools I use to build amazing web experiences</p>
+    <div class='grid gap-5'>
+      {
+        skills.map(({ skills, title }) => (
+          <article>
+            <h3 class='mb-2 text-lg font-semibold'>{title}</h3>
+            <ul class='flex gap-3'>
+              {skills.map((s) => (
+                <li class='rounded-lg border border-solid px-2 py-1'>{s}</li>
+              ))}
+            </ul>
+          </article>
+        ))
+      }
+    </div>
+  </Wrapper>
+</section>
