@@ -1,45 +1,42 @@
 ---
-import Wrapper from './Wrapper.astro';
+import Wrapper from '@/components/Wrapper.astro';
 
-const frontEndSkills = ['React', 'JavaScript', 'TypeScript', 'Next.js', 'Astro.js', 'TailwindCSS'];
+type SkillGroup = {
+  title: string;
+  skills: string[];
+};
 
-const backEndSkills = ['Node.js', 'Express.js', 'SQL', 'MongoDB'];
-
-const tools = ['Git', 'Webpack', 'Zod'];
-
-const skills = [
+const skillGroups: SkillGroup[] = [
   {
     title: 'Front-End',
-    skills: frontEndSkills,
+    skills: ['React', 'JavaScript', 'TypeScript', 'Next.js', 'Astro.js', 'TailwindCSS'],
   },
   {
     title: 'Back-End',
-    skills: backEndSkills,
+    skills: ['Node.js', 'Express.js', 'SQL', 'MongoDB'],
   },
   {
     title: 'Tools',
-    skills: tools,
+    skills: ['Git', 'Webpack', 'Zod'],
   },
 ];
 ---
 
 <section id='skills'>
-  <Wrapper>
+  <Wrapper className='gap-2'>
     <h2 class='text-2xl font-bold'>Skills</h2>
     <p>Technologies and tools I use to build amazing web experiences</p>
-    <div class='grid gap-5'>
-      {
-        skills.map(({ skills, title }) => (
-          <article>
-            <h3 class='mb-2 text-lg font-semibold'>{title}</h3>
-            <ul class='flex gap-3'>
-              {skills.map((s) => (
-                <li class='rounded-lg border border-solid px-2 py-1'>{s}</li>
-              ))}
-            </ul>
-          </article>
-        ))
-      }
-    </div>
+    {
+      skillGroups.map(({ skills, title }) => (
+        <section class='mt-3'>
+          <h3 class='mb-1 text-lg font-semibold'>{title}</h3>
+          <ul class='flex flex-wrap gap-3' role='list'>
+            {skills.map((s) => (
+              <li class='rounded-lg border border-solid bg-slate-50 px-2 py-1 shadow-sm'>{s}</li>
+            ))}
+          </ul>
+        </section>
+      ))
+    }
   </Wrapper>
 </section>
