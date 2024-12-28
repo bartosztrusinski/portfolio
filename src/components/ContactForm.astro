@@ -1,4 +1,4 @@
-<form class='flex w-full max-w-xs flex-col gap-6 justify-self-center rounded sm:max-w-sm'>
+<form class='flex max-w-xs flex-col gap-4 justify-self-center sm:max-w-sm'>
   <div class='flex flex-col gap-4 sm:flex-row'>
     <div class='flex grow flex-col gap-1'>
       <label for='name'>Name</label>
@@ -30,9 +30,10 @@
     <textarea
       id='message'
       name='message'
+      rows='3'
       required
       placeholder='Your message here'
       class='rounded-sm p-1'></textarea>
   </div>
-  <button type='submit' class='rounded bg-primary px-2 py-1'>Send</button>
+  <button type='submit' class='mt-2 rounded bg-primary px-2 py-1'>Send</button>
 </form>
