@@ -53,10 +53,10 @@ const projects: Project[] = [
       building functional and user-friendly applications:
     </p>
 
-    <div class='mt-4 grid grid-cols-2 gap-10'>
+    <div class='mx-auto mt-4 grid gap-x-6 gap-y-12 sm:grid-cols-2 md:gap-x-10'>
       {
         projects.map((project, index) => (
-          <article class='flex flex-col gap-2'>
+          <article class='flex max-w-72 flex-col gap-2'>
             <h3 class='px-1 text-lg font-semibold'>{project.name}</h3>
             <a
               href={project.url}
