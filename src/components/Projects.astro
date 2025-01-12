@@ -47,7 +47,7 @@ const projects: Project[] = [
 
 <section id='projects'>
   <Wrapper className='gap-2'>
-    <h2 class='text-2xl font-bold'>Projects</h2>
+    <h2 class='text-balance text-2xl font-bold'>Projects</h2>
     <p>
       Check out some of the projects I've worked on. They showcase my skills and passion for
       building functional and user-friendly applications:
@@ -56,7 +56,7 @@ const projects: Project[] = [
     <div class='mx-auto mt-4 grid gap-x-6 gap-y-12 sm:grid-cols-2 md:gap-x-10'>
       {
         projects.map((project, index) => (
-          <article class='flex max-w-72 flex-col gap-2'>
+          <article class='flex max-w-80 flex-col gap-2'>
             <h3 class='px-1 text-lg font-semibold'>{project.name}</h3>
             <a
               href={project.url}
@@ -67,7 +67,7 @@ const projects: Project[] = [
                 class='max-h-40 w-full rounded object-cover shadow-md'
               />
             </a>
-            <p class='text-balance px-1 text-justify'>{project.description}</p>
+            <p class='px-1 text-justify'>{project.description}</p>
             <section>
               <details>
                 <summary class='cursor-pointer px-1 outline-2 outline-offset-2 outline-primary marker:text-primary focus-visible:outline'>
@@ -95,12 +95,12 @@ const projects: Project[] = [
             <section class='mt-2 flex gap-2'>
               <a
                 href={project.repo}
-                class='grow rounded bg-primary py-1 text-center font-semibold outline-offset-2'>
+                class='grow rounded bg-primary p-2 text-center font-semibold outline-offset-2'>
                 Repo
               </a>
               <a
                 href={project.url}
-                class='grow rounded bg-primary py-1 text-center font-semibold outline-offset-2'>
+                class='grow rounded bg-primary p-2 text-center font-semibold outline-offset-2'>
                 Live
               </a>
             </section>

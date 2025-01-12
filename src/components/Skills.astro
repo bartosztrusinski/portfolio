@@ -24,7 +24,7 @@ const skillGroups: SkillGroup[] = [
 
 <section id='skills'>
   <Wrapper className='gap-2'>
-    <h2 class='text-2xl font-bold'>Skills</h2>
+    <h2 class='text-balance text-2xl font-bold'>Skills</h2>
     <p>Technologies and tools I use to build amazing web experiences</p>
     {
       skillGroups.map(({ skills, title }) => (
@@ -32,7 +32,7 @@ const skillGroups: SkillGroup[] = [
           <h3 class='mb-1 text-lg font-semibold'>{title}</h3>
           <ul class='flex flex-wrap gap-3' role='list'>
             {skills.map((s) => (
-              <li class='rounded-lg border border-solid bg-slate-50 px-2 py-1 shadow-sm'>{s}</li>
+              <li class='rounded-lg border border-solid px-2 py-1 shadow-sm'>{s}</li>
             ))}
           </ul>
         </section>
