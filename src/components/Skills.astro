@@ -1,23 +1,45 @@
 ---
 import Wrapper from '@/components/Wrapper.astro';
+import { Icon } from 'astro-icon/components';
 
 type SkillGroup = {
   title: string;
-  skills: string[];
+  skills: Skill[];
+};
+
+type Skill = {
+  name: string;
+  iconName: string;
 };
 
 const skillGroups: SkillGroup[] = [
   {
     title: 'Front-End',
-    skills: ['React', 'JavaScript', 'TypeScript', 'Next.js', 'Astro.js', 'TailwindCSS'],
+    skills: [
+      { name: 'React', iconName: 'logos:react' },
+      { name: 'JavaScript', iconName: 'logos:javascript' },
+      { name: 'TypeScript', iconName: 'logos:typescript-icon' },
+      { name: 'Next.js', iconName: 'logos:nextjs-icon' },
+      { name: 'Astro', iconName: 'logos:astro-icon' },
+      { name: 'Tailwind CSS', iconName: 'logos:tailwindcss-icon' },
+    ],
   },
   {
     title: 'Back-End',
-    skills: ['Node.js', 'Express.js', 'SQL', 'MongoDB'],
+    skills: [
+      { name: 'Node.js', iconName: 'logos:nodejs-icon' },
+      { name: 'Express', iconName: 'logos:express' },
+      { name: 'SQL', iconName: 'logos:postgresql' },
+      { name: 'MongoDB', iconName: 'logos:mongodb-icon' },
+    ],
   },
   {
     title: 'Tools',
-    skills: ['Git', 'Webpack', 'Zod'],
+    skills: [
+      { name: 'Git', iconName: 'logos:git-icon' },
+      { name: 'Webpack', iconName: 'logos:webpack' },
+      { name: 'Zod', iconName: 'logos:zod' },
+    ],
   },
 ];
 ---
@@ -31,8 +53,11 @@ const skillGroups: SkillGroup[] = [
         <section class='mt-3'>
           <h3 class='mb-1 text-lg font-semibold'>{title}</h3>
           <ul class='flex flex-wrap gap-3' role='list'>
-            {skills.map((s) => (
-              <li class='rounded-lg border border-solid px-2 py-1 shadow-sm'>{s}</li>
+            {skills.map(({ name, iconName }) => (
+              <li class='flex items-center gap-2 rounded-lg border border-solid px-2 py-1 shadow-sm'>
+                <Icon name={iconName} class='max-w-6' />
+                {name}
+              </li>
             ))}
           </ul>
         </section>
