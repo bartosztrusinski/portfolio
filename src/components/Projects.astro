@@ -1,11 +1,13 @@
 ---
 import Wrapper from '@/components/Wrapper.astro';
+import type { Technology } from '@/lib/types';
+import { Icon } from 'astro-icon/components';
 
 type Project = {
   name: string;
   description: string;
   thumbnail: string;
-  techStack: string[];
+  techStack: Technology[];
   features: string[];
   url: string;
   repo: string;
@@ -16,7 +18,12 @@ const projects: Project[] = [
     name: 'Chirper',
     description:
       'A full-stack social media application based on Twitter. Users can create posts, follow others, and interact with a variety of features like infinite scrolling and search filtering.',
-    techStack: ['React', 'Node.js', 'Express', 'MongoDB'],
+    techStack: [
+      { name: 'React', logo: 'logos:react' },
+      { name: 'Node.js', logo: 'logos:nodejs-icon' },
+      { name: 'Express', logo: 'simple-icons:express' },
+      { name: 'MongoDB', logo: 'logos:mongodb-icon' },
+    ],
     features: ['Infinite Scrolling', 'Search Filtering'],
     repo: '#',
     url: '#',
@@ -26,7 +33,10 @@ const projects: Project[] = [
     name: 'Your Project Name',
     description:
       'Brief description of your project goes here. Mention the technology stack used and any standout features.',
-    techStack: ['Tech 1', 'Tech 2'],
+    techStack: [
+      { name: 'Tech 1', logo: 'logos:javascript' },
+      { name: 'Tech 2', logo: 'logos:javascript' },
+    ],
     features: ['Feature 1', 'Feature 2'],
     repo: '#',
     url: '#',
@@ -36,7 +46,10 @@ const projects: Project[] = [
     name: 'Your Project Name',
     description:
       'Brief description of your project goes here. Mention the technology stack used and any standout features.',
-    techStack: ['Tech 1', 'Tech 2'],
+    techStack: [
+      { name: 'Tech 1', logo: 'logos:javascript' },
+      { name: 'Tech 2', logo: 'logos:javascript' },
+    ],
     features: ['Feature 1', 'Feature 2'],
     repo: '#',
     url: '#',
@@ -74,8 +87,11 @@ const projects: Project[] = [
                   <h4 class='inline font-semibold'>Tech Stack</h4>
                 </summary>
                 <ul class='flex flex-wrap gap-2 pl-4 pt-2 text-sm' role='list'>
-                  {project.techStack.map((tech) => (
-                    <li class='rounded border border-solid px-2 py-1 shadow'>{tech}</li>
+                  {project.techStack.map((technology) => (
+                    <li class='flex items-center gap-2 rounded border border-solid px-2 py-1 shadow-sm'>
+                      <Icon name={technology.logo} class='max-w-5' />
+                      {technology.name}
+                    </li>
                   ))}
                 </ul>
               </details>
