@@ -28,9 +28,9 @@ const skillGroups: SkillGroup[] = [
     title: 'Back-End',
     skills: [
       { name: 'Node.js', iconName: 'logos:nodejs-icon' },
-      { name: 'Express', iconName: 'logos:express' },
       { name: 'SQL', iconName: 'logos:postgresql' },
       { name: 'MongoDB', iconName: 'logos:mongodb-icon' },
+      { name: 'Express', iconName: 'simple-icons:express' },
     ],
   },
   {
@@ -55,7 +55,7 @@ const skillGroups: SkillGroup[] = [
           <ul class='flex flex-wrap gap-3' role='list'>
             {skills.map(({ name, iconName }) => (
               <li class='flex items-center gap-2 rounded-lg border border-solid px-2 py-1 shadow-sm'>
-                <Icon name={iconName} class='max-w-6' />
+                <Icon name={iconName} class='max-w-5' />
                 {name}
               </li>
             ))}

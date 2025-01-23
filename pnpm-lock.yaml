@@ -18,6 +18,9 @@ importers:
       '@iconify-json/logos':
         specifier: ^1.2.4
         version: 1.2.4
+      '@iconify-json/simple-icons':
+        specifier: ^1.2.21
+        version: 1.2.21
       '@typescript-eslint/parser':
         specifier: ^8.18.1
         version: 8.18.1(eslint@9.17.0(jiti@2.4.2))(typescript@5.7.2)
@@ -439,6 +442,9 @@ packages:
 
   '@iconify-json/logos@1.2.4':
     resolution: {integrity: sha512-XC4If5D/hbaZvUkTV8iaZuGlQCyG6CNOlaAaJaGa13V5QMYwYjgtKk3vPP8wz3wtTVNVEVk3LRx1fOJz+YnSMw==}
+
+  '@iconify-json/simple-icons@1.2.21':
+    resolution: {integrity: sha512-aqbIuVshMZ2fNEhm25//9DoKudboXF3CpoEQJJlHl9gVSVNOTr4cgaCIZvgSEYmys2HHEfmhcpoZIhoEFZS8SQ==}
 
   '@iconify/tools@4.1.1':
     resolution: {integrity: sha512-Hybu/HGhv6T8nLQhiG9rKx+ekF7NNpPOEQAy7JRSKht3s3dcFSsPccYzk24Znc9MTxrR6Gak3cg6CPP5dyvS2Q==}
@@ -3085,6 +3091,10 @@ snapshots:
   '@humanwhocodes/retry@0.4.1': {}
 
   '@iconify-json/logos@1.2.4':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/simple-icons@1.2.21':
     dependencies:
       '@iconify/types': 2.0.0
 
