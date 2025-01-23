@@ -1,27 +1,23 @@
----
-import Wrapper from '@/components/Wrapper.astro';
----
-
-<header id='hero'>
-  <Wrapper className='gap-5'>
-    <h1 class='my-2 text-start text-3xl font-bold leading-snug sm:text-4xl'>
-      Hi, my name is
-      <span
-        class='text-nowrap underline decoration-primary decoration-wavy decoration-4 underline-offset-4'>
-        Bartosz Trusiński
-      </span>
-    </h1>
-    <p>
-      I'm a passionate Front-End Developer with a love for building sleek, user-friendly web
-      applications.
-    </p>
-    <p>
-      I specialize in creating beautiful and performant websites using modern technologies like
-      React, TypeScript, Next.js, and Astro. I'm also open to exploring back-end development to
-      build end-to-end solutions. Let's collaborate and create amazing user experiences.
-    </p>
-    <a href='#contact' class='mt-2 justify-self-start rounded bg-primary px-4 py-2 font-semibold'>
-      Get in Touch
-    </a>
-  </Wrapper>
+<header id='hero' class='flow'>
+  <h1 class='px-1 py-5 text-center text-3xl font-bold leading-snug sm:py-7 sm:text-4xl'>
+    Hi, my name is
+    <span
+      class='text-nowrap underline decoration-primary decoration-wavy decoration-4 underline-offset-4'>
+      Bartosz Trusiński
+    </span>
+  </h1>
+  <p>
+    I'm a passionate Front-End Developer with a love for building sleek, user-friendly web
+    applications.
+  </p>
+  <p class='mb-6'>
+    I specialize in creating beautiful and performant websites using modern technologies like React,
+    TypeScript, Next.js, and Astro. I'm also open to exploring back-end development to build
+    end-to-end solutions. Let's collaborate and create amazing user experiences.
+  </p>
+  <a
+    href='#contact'
+    class='mx-auto block w-max rounded bg-primary px-6 py-2 text-center font-semibold'>
+    Get in Touch
+  </a>
 </header>
