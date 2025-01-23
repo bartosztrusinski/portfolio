@@ -1,10 +1,4 @@
-<form
-  action='https://api.web3forms.com/submit'
-  method='POST'
-  class='flex w-full max-w-xs flex-col gap-4 justify-self-center sm:max-w-md'>
-  {/* Access Key */}
-  <input type='hidden' name='access_key' value='53c17700-c53f-4dee-b0b4-83cc7ee7d51c' />
-
+<form action='https://api.web3forms.com/submit' method='POST' class='flow'>
   <div class='flex flex-col gap-4 sm:flex-row'>
     <div class='flex grow flex-col gap-1'>
       <label for='name'>Name</label>
@@ -31,14 +25,28 @@
       />
     </div>
   </div>
+
   <div class='flex grow flex-col gap-1'>
     <label for='message'>Message</label>
-    <textarea id='message' name='message' rows='3' class='rounded-sm px-2 py-1' required></textarea>
+    <textarea
+      id='message'
+      name='message'
+      rows='3'
+      maxlength='500'
+      class='min-h-24 rounded-sm px-2 py-1'
+      style='field-sizing: content;'
+      required></textarea>
   </div>
+
+  {/* Access Key */}
+  <input type='hidden' name='access_key' value='53c17700-c53f-4dee-b0b4-83cc7ee7d51c' />
 
   {/* Honeypot Spam Protection */}
   <input type='checkbox' name='botcheck' class='hidden' />
 
-  <button type='submit' class='mt-2 rounded bg-primary px-2 py-2 font-semibold'>Send message</button
+  <button
+    type='submit'
+    class='ms-auto block w-full rounded bg-primary px-4 py-2 font-semibold sm:w-max'
+    >Send message</button
   >
 </form>
