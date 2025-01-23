@@ -1,7 +1,8 @@
 ---
+import { Icon } from 'astro-icon/components';
+
 import Wrapper from '@/components/Wrapper.astro';
 import type { Technology } from '@/lib/types';
-import { Icon } from 'astro-icon/components';
 
 type Project = {
   name: string;
@@ -76,7 +77,7 @@ const projects: Project[] = [
               class='rounded outline-2 outline-offset-4 outline-primary transition-transform duration-300 hover:scale-105 focus-visible:outline'>
               <img
                 src={`https://picsum.photos/seed/${index + 12}/300/200`}
-                alt={`${project.name} web app screenshot`}
+                alt={`${project.name} web app thumbnail`}
                 class='max-h-40 w-full rounded object-cover shadow-md'
               />
             </a>
@@ -110,14 +111,16 @@ const projects: Project[] = [
             </section>
             <section class='mt-2 flex gap-2'>
               <a
-                href={project.repo}
-                class='grow rounded bg-primary p-2 text-center font-semibold outline-offset-2'>
-                Repo
+                href={project.url}
+                class='flex grow items-center justify-center gap-1 rounded bg-primary p-2 text-center font-semibold outline-offset-2'>
+                <Icon name='lucide:square-arrow-out-up-right' size={18} />
+                Visit
               </a>
               <a
-                href={project.url}
-                class='grow rounded bg-primary p-2 text-center font-semibold outline-offset-2'>
-                Live
+                href={project.repo}
+                class='flex grow items-center justify-center gap-1 rounded bg-primary p-2 text-center font-semibold outline-offset-2'>
+                <Icon name='lucide:github' size={18} />
+                Repo
               </a>
             </section>
           </article>
