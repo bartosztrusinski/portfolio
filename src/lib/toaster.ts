@@ -19,13 +19,17 @@ const DEFAULT_TYPE_VALUES: ToastTypeValues = Object.freeze({
   },
 });
 
-export class Toast extends Function {
-  private toast: HTMLElement;
+export function useToaster(toast: Element) {
+  return new Toast(toast);
+}
+
+class Toast extends Function {
+  private toast: Element;
   private typeValues: ToastTypeValues = DEFAULT_TYPE_VALUES;
   private timeoutId = 0;
   private displayDurationMs = 5000;
 
-  constructor(toast: HTMLElement) {
+  constructor(toast: Element) {
     // Extend Function class and use Proxy to make instance callable
     super('...args', 'return this.showToast(...args)');
 
