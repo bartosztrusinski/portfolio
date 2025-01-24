@@ -54,6 +54,9 @@
   {/* Email from name */}
   <input type='hidden' name='from_name' value='Portfolio' />
 
+  {/* Redirect URL */}
+  <input type='hidden' name='redirect' value={`${Astro.url}success`} />
+
   <button
     type='submit'
     class='ms-auto block w-full min-w-36 rounded bg-primary px-4 py-2 font-semibold disabled:cursor-not-allowed disabled:opacity-50 sm:w-max'>
@@ -83,7 +86,7 @@
       const data = await response.json();
 
       if (response.status !== 200) {
-        console.log(data?.message);
+        throw new Error(data?.message ?? `An error occurred: ${response.status}`);
       }
 
       toast.success('Message sent successfully!');
