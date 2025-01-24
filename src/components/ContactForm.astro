@@ -1,6 +1,6 @@
 <p
   id='toast'
-  class='fixed bottom-0 right-0 m-4 hidden min-h-[3.125rem] w-96 rounded border border-slate-200 bg-slate-50 px-6 py-3 font-semibold shadow-lg'>
+  class='fixed left-1/2 top-4 min-h-[3.125rem] w-max max-w-[min(100%-2rem,24rem)] -translate-x-1/2 text-wrap rounded border border-slate-200 bg-slate-50 px-6 py-3 text-start font-semibold shadow-lg sm:bottom-4 sm:left-auto sm:right-4 sm:top-auto sm:transform-none'>
 </p>
 <form action='https://api.web3forms.com/submit' method='POST' class='flow'>
   <div class='flex flex-col gap-4 sm:flex-row'>
@@ -133,6 +133,7 @@
     constructor(toast: HTMLElement) {
       super('...args', 'return this.showToast(...args)');
       this.toast = toast;
+      this.hidden = true;
       return new Proxy(this, {
         apply: (target, _, args: Parameters<typeof this.showToast>) => {
           return target.showToast(args[0]);
