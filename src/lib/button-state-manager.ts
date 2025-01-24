@@ -31,10 +31,6 @@ export class Button {
     this.btn = btn;
     this.stateValues.default.text = this.text ?? this.stateValues.default.text;
     this.stateValues.loading.text = loadingText ?? this.stateValues.loading.text;
-
-    console.log(this.stateValues);
-
-    console.log(this.stateValues);
   }
 
   private get text() {
