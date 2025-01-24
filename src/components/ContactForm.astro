@@ -62,14 +62,14 @@
 </form>
 
 <script>
-  import { Button } from '@/lib/buttonStateManager';
+  import { useButtonStateManager } from '@/lib/buttonStateManager';
   import { useToaster } from '@/lib/toaster';
 
   const toastEl = document.querySelector('#toast')!;
   const form = document.querySelector('form')!;
   const buttonEl = form.querySelector('button')!;
 
-  const button = new Button(buttonEl, 'Sending...');
+  const button = useButtonStateManager(buttonEl, 'Sending...');
   const toast = useToaster(toastEl);
 
   form.addEventListener('submit', async (event) => {

@@ -19,6 +19,10 @@ const DEFAULT_STATE_VALUES: ButtonStateValues = Object.freeze({
   },
 });
 
+export function useButtonStateManager(btn: HTMLButtonElement, loadingText?: string) {
+  return new Button(btn, loadingText);
+}
+
 export class Button {
   private btn: HTMLButtonElement;
   private stateValues: ButtonStateValues = DEFAULT_STATE_VALUES;
