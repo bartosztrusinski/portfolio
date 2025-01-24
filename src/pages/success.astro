@@ -1,0 +1,25 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { Icon } from 'astro-icon/components';
+---
+
+<Layout>
+  <main class='flex h-screen items-center justify-center px-6 py-2'>
+    <div
+      class='max-h-full w-fit max-w-sm overflow-y-scroll rounded-xl bg-slate-50 p-4 pb-10 shadow-lg sm:mx-16 sm:max-w-lg sm:pb-16 lg:max-w-xl lg:pb-20'>
+      <a href='/' class='inline'>
+        <Icon name='lucide:arrow-left' class='size-10 text-primary' />
+        <span class='sr-only'>Back to home</span>
+      </a>
+      <div class='flex flex-col items-center justify-center gap-1 px-4 md:mt-4'>
+        <Icon name='lucide:mail-check' class='mb-0 text-7xl text-primary sm:text-8xl md:text-9xl' />
+        <h1 class='text-balance text-center text-3xl font-bold sm:text-4xl'>
+          Message has been sent!
+        </h1>
+        <p class='text-center sm:text-lg'>
+          Thank you for reaching out! I'll get back to you as soon as possible.
+        </p>
+      </div>
+    </div>
+  </main>
+</Layout>
