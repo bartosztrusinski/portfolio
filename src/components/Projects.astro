@@ -2,6 +2,7 @@
 import { Icon } from 'astro-icon/components';
 
 import type { Technology } from '@/lib/types';
+import SectionLink from '@/components/SectionLink.astro';
 
 type Project = {
   name: string;
@@ -59,7 +60,9 @@ const projects: Project[] = [
 ---
 
 <section id='projects' class='full-width'>
-  <h2 class='text-2xl font-bold'>Projects</h2>
+  <h2 class='text-2xl font-bold'>
+    <SectionLink sectionId='projects'>Projects</SectionLink>
+  </h2>
   <p>
     Take a look at some of the projects I've worked on. They showcase my skills and passion for
     building functional and user-friendly applications
