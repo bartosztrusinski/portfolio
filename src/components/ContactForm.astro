@@ -62,122 +62,12 @@
 </form>
 
 <script>
+  import { Button } from '@/lib/buttonStateManager';
+  import { Toast } from '@/lib/toaster';
+
   const toastEl = document.querySelector('#toast') as HTMLElement;
   const form = document.querySelector('form')!;
   const buttonEl = form.querySelector('button')!;
-
-  type ButtonState = 'default' | 'loading';
-  type ButtonStateValues = {
-    text: string;
-    disabled: boolean;
-  };
-
-  class Button {
-    private btn: HTMLButtonElement;
-    private stateValues: Record<ButtonState, ButtonStateValues> = {
-      default: {
-        text: 'Submit',
-        disabled: false,
-      },
-      loading: {
-        text: 'Loading...',
-        disabled: true,
-      },
-    };
-
-    constructor(btn: HTMLButtonElement, loadingText?: string) {
-      this.btn = btn;
-      this.stateValues.default.text = this.btn.textContent ?? this.stateValues.default.text;
-      this.stateValues.loading.text = loadingText ?? this.stateValues.loading.text;
-
-      console.log(this.stateValues);
-    }
-
-    private set text(value: string) {
-      this.btn.textContent = value;
-    }
-
-    private disable() {
-      this.btn.setAttribute('disabled', 'true');
-    }
-
-    private enable() {
-      this.btn.removeAttribute('disabled');
-    }
-
-    setState(state: ButtonState) {
-      const newState = this.stateValues[state];
-      this.text = newState.text;
-      newState.disabled ? this.disable() : this.enable();
-    }
-  }
-
-  type ToastType = 'success' | 'error' | 'default';
-  type ToastTypeValues = {
-    classes: string;
-  };
-
-  class Toast extends Function {
-    private toast: HTMLElement;
-    private timeoutId: number = 0;
-    private displayDurationMs = 5000;
-    private TYPE_VALUES: Record<ToastType, ToastTypeValues> = {
-      default: {
-        classes: 'text-slate-600',
-      },
-      success: {
-        classes: 'text-green-500',
-      },
-      error: {
-        classes: 'text-red-500',
-      },
-    };
-
-    constructor(toast: HTMLElement) {
-      super('...args', 'return this.showToast(...args)');
-      this.toast = toast;
-      this.hidden = true;
-      return new Proxy(this, {
-        apply: (target, _, args: Parameters<typeof this.showToast>) => {
-          return target.showToast(args[0]);
-        },
-      });
-    }
-
-    private set message(value: string) {
-      this.toast.textContent = value;
-    }
-
-    private set hidden(value: boolean) {
-      this.toast.classList.toggle('hidden', value);
-    }
-
-    private removeTypeClasses() {
-      const allTypeClasses = Object.values(this.TYPE_VALUES)
-        .map((type) => type.classes)
-        .filter(Boolean);
-      this.toast.classList.remove(...allTypeClasses);
-    }
-
-    private showToast(message: string, type: ToastType = 'default') {
-      const typeValues = this.TYPE_VALUES[type];
-      window.clearTimeout(this.timeoutId);
-
-      this.message = message;
-      this.hidden = false;
-      this.removeTypeClasses();
-      this.toast.classList.add(typeValues.classes);
-      this.timeoutId = window.setTimeout(() => (this.hidden = true), this.displayDurationMs);
-    }
-
-    success(message: string) {
-      return this.showToast(message, 'success');
-    }
-
-    error(message: string) {
-      return this.showToast(message, 'error');
-    }
-  }
 
   const button = new Button(buttonEl, 'Sending...');
   const toast = new Toast(toastEl);
