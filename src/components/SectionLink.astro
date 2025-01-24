@@ -1,0 +1,19 @@
+---
+import { Icon } from 'astro-icon/components';
+
+type Props = {
+  sectionId: string;
+};
+
+const { sectionId } = Astro.props;
+---
+
+<a
+  href={`#${sectionId}`}
+  class='group flex w-max items-center transition-all duration-150 hover:opacity-70'>
+  <slot />
+  <Icon
+    name='lucide:link'
+    class='invisible ml-1 size-[0.75em] opacity-0 group-hover:visible group-hover:opacity-100'
+  />
+</a>
