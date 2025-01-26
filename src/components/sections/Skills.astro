@@ -46,19 +46,21 @@ const skillGroups: SkillGroup[] = [
     <SectionLink sectionId='skills'>Skills</SectionLink>
   </h2>
   <p class='mb-4'>Technologies and tools I use to build amazing web experiences</p>
-  {
-    skillGroups.map(({ title, technologies }) => (
-      <section class='mb-6'>
-        <h3 class='mb-1 text-lg font-semibold'>{title}</h3>
-        <ul class='flex flex-wrap gap-3' role='list'>
-          {technologies.map(({ name, logo }) => (
-            <li class='flex items-center gap-2 rounded-lg border border-solid px-2 py-1 shadow-sm'>
-              <Icon name={logo} class='max-w-5' />
-              {name}
-            </li>
-          ))}
-        </ul>
-      </section>
-    ))
-  }
+  <article class='space-y-6'>
+    {
+      skillGroups.map(({ title, technologies }) => (
+        <section>
+          <h3 class='mb-1 text-lg font-semibold'>{title}</h3>
+          <ul class='flex flex-wrap gap-3' role='list'>
+            {technologies.map(({ name, logo }) => (
+              <li class='flex items-center gap-2 rounded-lg border px-2 py-1 shadow-md'>
+                <Icon name={logo} class='max-w-5' />
+                {name}
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))
+    }
+  </article>
 </section>
