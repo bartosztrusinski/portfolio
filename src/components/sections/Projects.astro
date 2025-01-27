@@ -1,13 +1,21 @@
 ---
+import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
+import type { ImageMetadata } from 'astro';
 
-import type { Technology } from '@/lib/types';
 import SectionLink from '@/components/SectionLink.astro';
+import chirperThumbnail from '@/assets/chirper.png';
+import chirperLogo from '@/assets/chirper-logo.png';
+import type { Technology } from '@/lib/types';
 
 type Project = {
   name: string;
   description: string;
-  thumbnail: string;
+  logo?: {
+    name: ImageMetadata | string;
+    classes?: string;
+  };
+  thumbnail?: ImageMetadata;
   techStack: Technology[];
   features: string[];
   url: string;
@@ -17,18 +25,40 @@ type Project = {
 const projects: Project[] = [
   {
     name: 'Chirper',
+    logo: { name: chirperLogo, classes: 'text-teal-500' },
     description:
-      'A full-stack social media application based on Twitter. Users can create posts, follow others, and interact with a variety of features like infinite scrolling and search filtering.',
+      'A social media web application inspired by Twitter. Create posts, follow others and explore with a variety of features like infinite scrolling and search filtering.',
     techStack: [
       { name: 'React', logo: 'logos:react' },
+      { name: 'TanStack Query', logo: 'logos:react-query-icon' },
+      { name: 'TanStack Router', logo: 'logos:react-query-icon' },
+      { name: 'TypeScript', logo: 'logos:typescript-icon' },
+      { name: 'Sass', logo: 'logos:sass' },
+      { name: 'React Hook Form', logo: 'logos:react' },
+      { name: 'React Hot Toast', logo: 'logos:react' },
+      { name: 'Webpack', logo: 'logos:webpack' },
+      { name: 'SWC', logo: 'logos:swc' },
+      { name: 'Zod', logo: 'logos:zod' },
       { name: 'Node.js', logo: 'logos:nodejs-icon' },
       { name: 'Express', logo: 'simple-icons:express' },
       { name: 'MongoDB', logo: 'logos:mongodb-icon' },
+      { name: 'Mongoose.js', logo: 'simple-icons:mongoose' },
+      { name: 'JWT', logo: 'logos:jwt-icon' },
     ],
-    features: ['Infinite Scrolling', 'Search Filtering'],
-    repo: '#',
+    features: [
+      'Post, like, delete and reply to Chirps',
+      'Manage user accounts - create, edit, and follow',
+      'Scrollable feed with infinite scrolling',
+      'Explore all Chirps and filter results on the search page',
+      'View created or liked Chirps',
+      'Responsive design with light/dark mode',
+      'Notifications and data caching with optimistic updates',
+      'Authentication and authorization',
+      'Client and server-side validation',
+    ],
+    repo: 'https://github.com/bartosztrusinski/chirper',
     url: '#',
-    thumbnail: '#',
+    thumbnail: chirperThumbnail,
   },
   {
     name: 'Your Project Name',
@@ -41,7 +71,6 @@ const projects: Project[] = [
     features: ['Feature 1', 'Feature 2'],
     repo: '#',
     url: '#',
-    thumbnail: '#',
   },
   {
     name: 'Your Project Name',
@@ -54,7 +83,6 @@ const projects: Project[] = [
     features: ['Feature 1', 'Feature 2'],
     repo: '#',
     url: '#',
-    thumbnail: '#',
   },
 ];
 ---
@@ -70,27 +98,39 @@ const projects: Project[] = [
 
   <div class='breakout mt-10 grid gap-x-6 gap-y-10 sm:grid-cols-2 md:grid-cols-3'>
     {
-      projects.map((project, index) => (
+      projects.map((project) => (
         <article class='mx-auto flex max-w-80 flex-col gap-2 sm:max-w-full'>
-          <h3 class='px-1 text-lg font-semibold'>{project.name}</h3>
+          <h3 class='flex items-center gap-1 px-1 text-lg font-semibold'>
+            {project.logo && typeof project.logo.name === 'string' && (
+              <Icon name={project.logo.name} class={`inline size-5 ${project.logo.classes}`} />
+            )}
+            {project.logo && typeof project.logo.name !== 'string' && (
+              <Image
+                src={project.logo.name}
+                alt={`${project.name} logo`}
+                class={`inline size-6 ${project.logo.classes}`}
+              />
+            )}
+            {project.name}
+          </h3>
           <a
             href={project.url}
             class='rounded outline-2 outline-offset-4 outline-primary transition-transform duration-300 hover:scale-105 focus-visible:outline'>
-            <img
-              src={`https://picsum.photos/seed/${index + 12}/300/200`}
+            <Image
+              src={project.thumbnail || chirperThumbnail}
               alt={`${project.name} web app thumbnail`}
-              class='max-h-40 w-full rounded object-cover shadow-md'
+              class='aspect-video w-full rounded object-cover object-top shadow-md'
             />
           </a>
           <p class='p-1'>{project.description}</p>
           <section>
-            <details>
+            <details open>
               <summary class='cursor-pointer px-1 outline-2 outline-offset-2 outline-primary marker:text-primary focus-visible:outline'>
                 <h4 class='inline font-semibold'>Tech Stack</h4>
               </summary>
-              <ul class='flex flex-wrap gap-2 pl-4 pt-2 text-sm' role='list'>
+              <ul class='flex flex-wrap gap-1 py-2 pl-4 text-sm' role='list'>
                 {project.techStack.map((technology) => (
-                  <li class='flex items-center gap-2 rounded border border-solid px-2 py-1 shadow-sm'>
+                  <li class='flex items-center gap-1 rounded border border-solid bg-slate-50 px-2 py-1 shadow'>
                     <Icon name={technology.logo} class='max-w-5' />
                     {technology.name}
                   </li>
@@ -99,13 +139,16 @@ const projects: Project[] = [
             </details>
           </section>
           <section>
-            <details>
+            <details open>
               <summary class='cursor-pointer px-1 outline-2 outline-offset-2 outline-primary marker:text-primary focus-visible:outline'>
                 <h4 class='inline font-semibold'>Features</h4>
               </summary>
-              <ul class='list-inside list-disc pl-4 pt-1 marker:text-primary'>
+              <ul class='py-2 pl-2 font-light'>
                 {project.features.map((feature) => (
-                  <li>{feature}</li>
+                  <li class='flex'>
+                    <Icon name='lucide:dot' class='inline size-5 shrink-0 stroke-2' />
+                    {feature}
+                  </li>
                 ))}
               </ul>
             </details>
@@ -113,12 +156,14 @@ const projects: Project[] = [
           <section class='mt-2 flex gap-2'>
             <a
               href={project.url}
+              target='_blank'
               class='flex grow items-center justify-center gap-1 rounded bg-primary p-2 text-center font-semibold outline-offset-2'>
               <Icon name='lucide:square-arrow-out-up-right' size={18} />
               Visit
             </a>
             <a
               href={project.repo}
+              target='_blank'
               class='flex grow items-center justify-center gap-1 rounded bg-primary p-2 text-center font-semibold outline-offset-2'>
               <Icon name='lucide:github' size={18} />
               Repo
