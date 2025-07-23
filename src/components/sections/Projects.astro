@@ -18,7 +18,7 @@ type Project = {
   thumbnail?: ImageMetadata;
   techStack: Technology[];
   features: string[];
-  url: string;
+  url?: string;
   repo: string;
 };
 
@@ -319,13 +319,15 @@ const projects: Project[] = [
             </details>
           </section>
           <section class='mt-2 flex gap-2'>
-            <a
-              href={project.url}
-              target='_blank'
-              class='flex grow items-center justify-center gap-1 rounded bg-primary p-2 text-center font-semibold outline-offset-2'>
-              <Icon name='lucide:square-arrow-out-up-right' size={18} />
-              Visit
-            </a>
+            {project.url && (
+              <a
+                href={project.url}
+                target='_blank'
+                class='flex grow items-center justify-center gap-1 rounded bg-primary p-2 text-center font-semibold outline-offset-2'>
+                <Icon name='lucide:square-arrow-out-up-right' size={18} />
+                Visit
+              </a>
+            )}
             <a
               href={project.repo}
               target='_blank'
