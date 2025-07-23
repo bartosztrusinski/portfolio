@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang='en' class='scroll-smooth'>
+<html lang='en' class='h-full overflow-auto scroll-smooth'>
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width' />
@@ -7,7 +7,7 @@
     <meta name='generator' content={Astro.generator} />
     <title>Frontend Developer | Bartosz Trusiński</title>
   </head>
-  <body class='bg-slate-50 text-slate-900 selection:bg-primary'>
+  <body class='h-full overflow-auto bg-slate-50 text-slate-900 selection:bg-primary'>
     <slot />
   </body>
 </html>
@@ -70,43 +70,5 @@
   h5,
   h6 {
     font-family: 'Geist Variable', system-ui, sans-serif;
-  }
-
-  .content-grid,
-  .full-width {
-    --padding-inline: 2rem;
-    --content-max-width: 65ch;
-    --breakout-max-width: 90ch;
-
-    --breakout-size: calc((var(--breakout-max-width) - var(--content-max-width)) / 2);
-
-    --full-width: minmax(var(--padding-inline), 1fr);
-    --breakout: minmax(0, var(--breakout-size));
-    --content: min(100% - var(--padding-inline) * 2, var(--content-max-width));
-
-    display: grid;
-    grid-template-columns:
-      [full-width-start] var(--full-width)
-      [breakout-start] var(--breakout)
-      [content-start] var(--content) [content-end]
-      var(--breakout) [breakout-end]
-      var(--full-width) [full-width-end];
-
-    & > :not(.breakout, .full-width) {
-      grid-column: content;
-    }
-
-    & > .breakout {
-      grid-column: breakout;
-    }
-
-    & > .full-width {
-      grid-column: full-width;
-    }
-  }
-
-  p {
-    text-align: justify;
-    text-wrap: pretty;
   }
 </style>

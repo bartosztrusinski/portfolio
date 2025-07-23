@@ -87,7 +87,7 @@ const projects: Project[] = [
 ];
 ---
 
-<section id='projects' class='full-width'>
+<section id='projects' class='full-width slide-up'>
   <h2 class='text-2xl font-bold'>
     <SectionLink sectionId='projects'>Projects</SectionLink>
   </h2>
@@ -124,7 +124,7 @@ const projects: Project[] = [
           </a>
           <p class='p-1'>{project.description}</p>
           <section>
-            <details open>
+            <details>
               <summary class='cursor-pointer px-1 outline-2 outline-offset-2 outline-primary marker:text-primary focus-visible:outline'>
                 <h4 class='inline font-semibold'>Tech Stack</h4>
               </summary>
@@ -139,7 +139,7 @@ const projects: Project[] = [
             </details>
           </section>
           <section>
-            <details open>
+            <details>
               <summary class='cursor-pointer px-1 outline-2 outline-offset-2 outline-primary marker:text-primary focus-visible:outline'>
                 <h4 class='inline font-semibold'>Features</h4>
               </summary>
