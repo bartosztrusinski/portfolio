@@ -11,8 +11,8 @@
   },
   "devDependencies": {
     "@astrojs/tailwind": "^5.1.5",
-    "@iconify-json/logos": "^1.2.4",
-    "@iconify-json/lucide": "^1.2.57",
+    "@iconify-json/logos": "^1.2.5",
+    "@iconify-json/lucide": "^1.2.58",
     "@iconify-json/simple-icons": "^1.2.44",
     "@typescript-eslint/parser": "^8.38.0",
     "astro": "^5.12.1",
