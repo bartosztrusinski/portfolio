@@ -59,16 +59,21 @@ import Footer from '@/components/sections/Footer.astro';
     }
   }
 
-  .slide-up {
-    opacity: 0;
-    transform: translateY(4rem);
-    filter: blur(0.25rem);
-    transition: all 400ms ease-out;
-  }
+  @media (prefers-reduced-motion: no-preference) {
+    .slide-up {
+      opacity: 0;
+      transform: translateY(3rem);
+      filter: blur(0.2rem);
+      transition:
+        opacity 500ms ease-out,
+        transform 500ms ease-out,
+        filter 500ms ease-out;
+    }
 
-  .slide-up.is-visible {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
+    .slide-up.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+      filter: blur(0);
+    }
   }
 </style>
