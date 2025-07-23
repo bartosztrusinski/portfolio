@@ -27,7 +27,7 @@ const projects: Project[] = [
     name: 'Chirper',
     logo: { name: chirperLogo, classes: 'text-teal-500' },
     description:
-      'A social media web application inspired by Twitter. Create posts, follow others and explore with a variety of features like infinite scrolling and search filtering.',
+      'Social media web application inspired by Twitter. Create posts, follow others and explore with a variety of features like infinite scrolling and search filtering',
     techStack: [
       { name: 'React', logo: 'logos:react' },
       { name: 'TanStack Query', logo: 'logos:react-query-icon' },
@@ -61,28 +61,34 @@ const projects: Project[] = [
     thumbnail: chirperThumbnail,
   },
   {
-    name: 'Your Project Name',
+    name: 'Basic Auth',
     description:
-      'Brief description of your project goes here. Mention the technology stack used and any standout features.',
+      'Secure, extensible and ready-to-use auth solution for Next.js, built from scratch with emphasis on security and best practices',
     techStack: [
-      { name: 'Tech 1', logo: 'logos:javascript' },
-      { name: 'Tech 2', logo: 'logos:javascript' },
+      { name: 'Next.js', logo: 'logos:nextjs-icon' },
+      { name: 'React', logo: 'logos:react' },
+      { name: 'TypeScript', logo: 'logos:typescript-icon' },
+      { name: 'Tailwind CSS', logo: 'logos:tailwindcss-icon' },
+      { name: 'Drizzle ORM', logo: 'logos:react' },
+      { name: 'PostgreSQL', logo: 'logos:postgresql' },
+      { name: 'Resend', logo: 'logos:react' },
+      { name: 'React Email', logo: 'logos:react' },
+      { name: 'Zod', logo: 'logos:zod' },
+      { name: 'otpauth', logo: 'logos:react' },
+      { name: 'Argon2', logo: 'logos:react' },
     ],
-    features: ['Feature 1', 'Feature 2'],
-    repo: '#',
-    url: '#',
-  },
-  {
-    name: 'Your Project Name',
-    description:
-      'Brief description of your project goes here. Mention the technology stack used and any standout features.',
-    techStack: [
-      { name: 'Tech 1', logo: 'logos:javascript' },
-      { name: 'Tech 2', logo: 'logos:javascript' },
+    features: [
+      'Credential-based Login & OAuth 2.0 (Google, GitHub, Discord)',
+      'Sign Up with mandatory email verification',
+      'Secure, cookie-based session management',
+      'Middleware-protected routes and Role-Based Access Control (RBAC)',
+      'Two-Factor Authentication (TOTP) with QR code setup and backup codes',
+      'Optimal and secure Database with Pepper, Argon2 hashing, AES-256-GCM encryption, prepared statements and transactions',
+      'Log Out Everywhere to invalidate all active sessions',
+      'Modern email templates with React Email',
     ],
-    features: ['Feature 1', 'Feature 2'],
-    repo: '#',
-    url: '#',
+    url: '',
+    repo: 'https://github.com/bartosztrusinski/basic-auth',
   },
 ];
 ---
@@ -124,7 +130,7 @@ const projects: Project[] = [
           </a>
           <p class='p-1'>{project.description}</p>
           <section>
-            <details>
+            <details open>
               <summary class='cursor-pointer px-1 outline-2 outline-offset-2 outline-primary marker:text-primary focus-visible:outline'>
                 <h4 class='inline font-semibold'>Tech Stack</h4>
               </summary>
@@ -139,7 +145,7 @@ const projects: Project[] = [
             </details>
           </section>
           <section>
-            <details>
+            <details open>
               <summary class='cursor-pointer px-1 outline-2 outline-offset-2 outline-primary marker:text-primary focus-visible:outline'>
                 <h4 class='inline font-semibold'>Features</h4>
               </summary>
