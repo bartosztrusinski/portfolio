@@ -1,10 +1,7 @@
 ---
-import { Image } from 'astro:assets';
-import { Icon } from 'astro-icon/components';
 import { getCollection } from 'astro:content';
-import { technologies } from '@/data/technologies.ts';
 import SectionLink from '@/components/SectionLink.astro';
-import chirperThumbnail from '@/assets/chirper.png';
+import Project from '@/components/project.astro';
 
 const projects = await getCollection('projects');
 ---
@@ -19,82 +16,6 @@ const projects = await getCollection('projects');
   </p>
 
   <div class='breakout mt-10 grid gap-x-6 gap-y-10 sm:grid-cols-2 md:grid-cols-3'>
-    {
-      projects.map(({ data: project }) => (
-        <article class='mx-auto flex max-w-80 flex-col gap-2 sm:max-w-full'>
-          <h3 class='flex items-center gap-1 px-1 text-lg font-semibold'>
-            {project.logo && (
-              <Image src={project.logo} alt={`${project.name} logo`} class='inline size-6' />
-            )}
-            {project.name}
-          </h3>
-          <a
-            href={project.url}
-            class='rounded outline-2 outline-offset-4 outline-primary transition-transform duration-300 hover:scale-105 focus-visible:outline'>
-            <Image
-              src={chirperThumbnail}
-              alt={`${project.name} web app thumbnail`}
-              class='aspect-video w-full rounded object-cover object-top shadow-md'
-            />
-          </a>
-          <p class='p-1'>{project.description}</p>
-          <section>
-            <details>
-              <summary class='cursor-pointer px-1 outline-2 outline-offset-2 outline-primary marker:text-primary focus-visible:outline'>
-                <h4 class='inline font-semibold'>Tech Stack</h4>
-              </summary>
-              <ul class='flex flex-wrap gap-1 py-2 pl-4 text-sm' role='list'>
-                {project.techStack.map((technologyKey) => {
-                  const technology = technologies[technologyKey];
-
-                  return (
-                    <li class='flex items-center gap-1 rounded border border-solid bg-slate-50 px-2 py-1 shadow'>
-                      <Icon
-                        name={technology.logo}
-                        class:list={['min-h-4 min-w-4 max-w-5', technology.class]}
-                      />
-                      {technology.name}
-                    </li>
-                  );
-                })}
-              </ul>
-            </details>
-          </section>
-          <section>
-            <details>
-              <summary class='cursor-pointer px-1 outline-2 outline-offset-2 outline-primary marker:text-primary focus-visible:outline'>
-                <h4 class='inline font-semibold'>Features</h4>
-              </summary>
-              <ul class='py-2 pl-2 font-light'>
-                {project.features.map((feature) => (
-                  <li class='flex'>
-                    <Icon name='lucide:dot' class='inline size-5 shrink-0 stroke-2' />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </details>
-          </section>
-          <section class='mt-2 flex gap-2'>
-            {project.url && (
-              <a
-                href={project.url}
-                target='_blank'
-                class='flex grow items-center justify-center gap-1 rounded bg-primary p-2 text-center font-semibold outline-offset-2'>
-                <Icon name='lucide:square-arrow-out-up-right' size={18} />
-                Visit
-              </a>
-            )}
-            <a
-              href={project.repo}
-              target='_blank'
-              class='flex grow items-center justify-center gap-1 rounded bg-primary p-2 text-center font-semibold outline-offset-2'>
-              <Icon name='lucide:github' size={18} />
-              Repo
-            </a>
-          </section>
-        </article>
-      ))
-    }
+    {projects.map((project) => <Project {...project.data} />)}
   </div>
 </section>
