@@ -11,5 +11,6 @@
   ],
   "thumbnail": "../../assets/astro-blog/thumbnail.png",
   "repo": "https://github.com/bartosztrusinski/astro-blog",
-  "url": "https://astro-blog.trusinski.dev"
+  "url": "https://astro-blog.trusinski.dev",
+  "order": 6
 }

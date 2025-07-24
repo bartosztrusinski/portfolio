@@ -26,5 +26,6 @@
   "logo": "../../assets/basic-auth/logo.png",
   "thumbnail": "../../assets/basic-auth/thumbnail.png",
   "repo": "https://github.com/bartosztrusinski/basic-auth",
-  "url": "https://basic-auth.trusinski.dev"
+  "url": "https://basic-auth.trusinski.dev",
+  "order": 1
 }

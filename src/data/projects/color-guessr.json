@@ -11,5 +11,6 @@
   ],
   "thumbnail": "../../assets/color-guessr/thumbnail.png",
   "repo": "https://github.com/bartosztrusinski/color-guessr",
-  "url": "https://color-guessr.trusinski.dev"
+  "url": "https://color-guessr.trusinski.dev",
+  "order": 8
 }

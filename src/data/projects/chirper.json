@@ -33,5 +33,6 @@
   "logo": "../../assets/chirper/logo.png",
   "thumbnail": "../../assets/chirper/thumbnail.png",
   "repo": "https://github.com/bartosztrusinski/chirper",
-  "url": "https://chirper.trusinski.dev"
+  "url": "https://chirper.trusinski.dev",
+  "order": 2
 }

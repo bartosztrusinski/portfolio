@@ -11,5 +11,6 @@
   "logo": "../../assets/tx-store/logo.svg",
   "thumbnail": "../../assets/tx-store/thumbnail.png",
   "repo": "https://github.com/bartosztrusinski/tx-store",
-  "url": "https://tx-store.trusinski.dev"
+  "url": "https://tx-store.trusinski.dev",
+  "order": 3
 }

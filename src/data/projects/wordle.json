@@ -12,5 +12,6 @@
   ],
   "thumbnail": "../../assets/wordle/thumbnail.png",
   "repo": "https://github.com/bartosztrusinski/wordle",
-  "url": "https://wordle.trusinski.dev"
+  "url": "https://wordle.trusinski.dev",
+  "order": 9
 }

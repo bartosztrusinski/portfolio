@@ -28,5 +28,6 @@
   ],
   "logo": "../../assets/just-cook/logo.webp",
   "thumbnail": "../../assets/just-cook/thumbnail.png",
-  "repo": "https://github.com/Azzirr/just-cook"
+  "repo": "https://github.com/Azzirr/just-cook",
+  "order": 4
 }

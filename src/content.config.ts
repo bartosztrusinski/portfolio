@@ -14,6 +14,7 @@ const projectSchema = ({ image }: SchemaContext) =>
     thumbnail: image(),
     repo: z.string().url(),
     url: z.string().url().optional(),
+    order: z.number().default(0),
   });
 
 const projects = defineCollection({

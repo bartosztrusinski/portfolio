@@ -11,5 +11,6 @@
   ],
   "thumbnail": "../../assets/tic-tac-toe/thumbnail.png",
   "repo": "https://github.com/bartosztrusinski/tic-tac-toe",
-  "url": "https://tic-tac-toe.trusinski.dev"
+  "url": "https://tic-tac-toe.trusinski.dev",
+  "order": 11
 }

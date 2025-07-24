@@ -34,5 +34,6 @@
   "logo": "../../assets/yelp-camp/logo.png",
   "thumbnail": "../../assets/yelp-camp/thumbnail.png",
   "repo": "https://github.com/bartosztrusinski/yelp-camp",
-  "url": "https://yelp-camp.trusinski.dev"
+  "url": "https://yelp-camp.trusinski.dev",
+  "order": 5
 }

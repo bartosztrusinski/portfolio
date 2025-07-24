@@ -12,5 +12,6 @@
   ],
   "thumbnail": "../../assets/co2-emissions-explorer/thumbnail.png",
   "repo": "https://github.com/bartosztrusinski/co2-emissions-explorer",
-  "url": "https://co2-emissions-explorer.trusinski.dev"
+  "url": "https://co2-emissions-explorer.trusinski.dev",
+  "order": 10
 }
