@@ -1,289 +1,12 @@
 ---
 import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
-import type { ImageMetadata } from 'astro';
-
+import { getCollection } from 'astro:content';
+import { technologies } from '@/data/technologies.ts';
 import SectionLink from '@/components/SectionLink.astro';
 import chirperThumbnail from '@/assets/chirper.png';
-import chirperLogo from '@/assets/chirper-logo.png';
-import type { Technology } from '@/lib/types';
 
-type Project = {
-  name: string;
-  description: string;
-  logo?: {
-    name: ImageMetadata | string;
-    classes?: string;
-  };
-  thumbnail?: ImageMetadata;
-  techStack: Technology[];
-  features: string[];
-  url?: string;
-  repo: string;
-};
-
-const projects: Project[] = [
-  {
-    name: 'Chirper',
-    logo: { name: chirperLogo, classes: 'text-teal-500' },
-    description:
-      'Social media web application inspired by Twitter. Create posts, follow others and explore with a variety of features like infinite scrolling and search filtering',
-    techStack: [
-      { name: 'React', logo: 'logos:react' },
-      { name: 'TanStack Query', logo: 'logos:react-query-icon' },
-      { name: 'TanStack Router', logo: 'logos:react-query-icon' },
-      { name: 'TypeScript', logo: 'logos:typescript-icon' },
-      { name: 'Sass', logo: 'logos:sass' },
-      { name: 'React Hook Form', logo: 'simple-icons:reacthookform' },
-      { name: 'React Hot Toast', logo: 'logos:react' },
-      { name: 'Axios', logo: 'simple-icons:axios' },
-      { name: 'Webpack', logo: 'logos:webpack' },
-      { name: 'SWC', logo: 'logos:swc' },
-      { name: 'Zod', logo: 'logos:zod' },
-      { name: 'Node.js', logo: 'logos:nodejs-icon' },
-      { name: 'Express.js', logo: 'simple-icons:express' },
-      { name: 'MongoDB', logo: 'logos:mongodb-icon' },
-      { name: 'Mongoose ODM', logo: 'simple-icons:mongoose' },
-      { name: 'JWT', logo: 'logos:jwt-icon' },
-    ],
-    features: [
-      'Post, like, delete and reply to Chirps',
-      'Manage user accounts - create, edit, and follow',
-      'Scrollable feed with infinite scrolling',
-      'Explore all Chirps and filter results on the search page',
-      'View created or liked Chirps',
-      'Responsive design with light/dark mode',
-      'Notifications and data caching with optimistic updates',
-      'Authentication and authorization',
-      'Client and server-side validation',
-    ],
-    repo: 'https://github.com/bartosztrusinski/chirper',
-    url: '#',
-    thumbnail: chirperThumbnail,
-  },
-  {
-    name: 'Basic Auth',
-    description:
-      'Secure, extensible and ready-to-use auth solution for Next.js, built from scratch with emphasis on security and best practices',
-    techStack: [
-      { name: 'Next.js', logo: 'logos:nextjs-icon' },
-      { name: 'React', logo: 'logos:react' },
-      { name: 'TypeScript', logo: 'logos:typescript-icon' },
-      { name: 'Tailwind CSS', logo: 'logos:tailwindcss-icon' },
-      { name: 'Drizzle ORM', logo: 'logos:react' },
-      { name: 'PostgreSQL', logo: 'logos:postgresql' },
-      { name: 'Resend', logo: 'logos:react' },
-      { name: 'React Email', logo: 'logos:react' },
-      { name: 'Zod', logo: 'logos:zod' },
-      { name: 'OTPAuth', logo: 'logos:react' },
-    ],
-    features: [
-      'Credential-based Login & OAuth 2.0 (Google, GitHub, Discord)',
-      'Sign Up with mandatory email verification',
-      'Secure, cookie-based session management',
-      'Middleware-protected routes and Role-Based Access Control (RBAC)',
-      'Two-Factor Authentication (TOTP) with QR code setup and backup codes',
-      'Optimal and secure Database with Pepper, Argon2 hashing, AES-256-GCM encryption, prepared statements and transactions',
-      'Log Out Everywhere to invalidate all active sessions',
-      'Modern email templates with React Email',
-    ],
-    url: '',
-    repo: 'https://github.com/bartosztrusinski/basic-auth',
-  },
-  {
-    name: 'Yelp Camp',
-    description:
-      'Campsite sharing web app. Discover, review, and share campgrounds with a global community',
-    techStack: [
-      { name: 'EJS', logo: 'logos:react' },
-      { name: 'Node.js', logo: 'logos:nodejs-icon' },
-      { name: 'Express.js', logo: 'simple-icons:express' },
-      { name: 'MongoDB', logo: 'logos:mongodb-icon' },
-      { name: 'Mongoose ODM', logo: 'simple-icons:mongoose' },
-      { name: 'Redis', logo: 'logos:redis' },
-      { name: 'Joi', logo: 'logos:react' },
-      { name: 'Bootstrap', logo: 'logos:bootstrap' },
-      { name: 'Mapbox', logo: 'simple-icons:mapbox' },
-      { name: 'Cloudinary', logo: 'logos:cloudinary-icon' },
-      { name: 'Resend', logo: 'logos:react' },
-      { name: 'Passport', logo: 'logos:passport' },
-      { name: 'date-fns', logo: 'simple-icons:datefns' },
-      { name: 'Multer', logo: 'simple-icons:express' },
-    ],
-    features: [
-      'Create, edit, and delete campgrounds',
-      'Create, edit, and delete user accounts',
-      'Campground reviews with rating system',
-      'User profiles displaying their campgrounds',
-      'Detailed campground pages with map, reviews, and up to 3 images',
-      'World map with all campground locations',
-      'Pagination and responsive design',
-      'User account email verification and password reset',
-      'Contact form with email sending',
-      'Authentication and authorization',
-      'Input validation, sanitization, and data encryption',
-      'Layered rate limiting',
-    ],
-    url: '',
-    repo: 'https://github.com/bartosztrusinski/yelp-camp',
-  },
-  {
-    name: 'CO2 Emissions Explorer',
-    description:
-      'Interactive web app to visualize, explore and compare carbon dioxide emissions data from around the world',
-    techStack: [
-      { name: 'TypeScript', logo: 'logos:typescript-icon' },
-      { name: 'D3.js', logo: 'logos:d3' },
-      { name: 'TopoJSON', logo: 'logos:react' },
-      { name: 'Vite', logo: 'logos:vitejs' },
-      { name: 'CSS', logo: 'simple-icons:css' },
-    ],
-    features: [
-      'Interactive world map to visualize CO2 emissions for each country',
-      'Switch between total emissions and emissions per capita',
-      'Yearly data slider to see how emissions change by year',
-      'Country-specific histogram for emission trends',
-      'Pie chart showing emission distribution by continent',
-      'Hover tooltips with detailed information',
-    ],
-    url: '',
-    repo: 'https://github.com/bartosztrusinski/co2-emissions-explorer',
-  },
-  {
-    name: 'Color Guessr',
-    description:
-      'Vibrant web game where you test your color perception by matching colors to their corresponding RGB codes',
-    techStack: [
-      { name: 'SolidJS', logo: 'logos:solidjs-icon' },
-      { name: 'TypeScript', logo: 'logos:typescript-icon' },
-      { name: 'Tailwind CSS', logo: 'logos:tailwindcss-icon' },
-      { name: 'daisyUI', logo: 'logos:daisyui-icon' },
-      { name: 'Vite', logo: 'logos:vitejs' },
-    ],
-    features: [
-      'Color guessing gameplay where you match RGB codes to colors',
-      'Multiple difficulty levels',
-      'Score tracking and persistent high score',
-      'Themeable UI with multiple themes',
-      'Responsive design for desktop and mobile',
-    ],
-    url: '',
-    repo: 'https://github.com/bartosztrusinski/color-guessr',
-  },
-  {
-    name: 'Astro Blog',
-    description:
-      'Minimalist blog about astronomy and astrophysics. It serves as a personal space to share thoughts about the cosmos',
-    techStack: [
-      { name: 'Astro', logo: 'logos:astro-icon' },
-      { name: 'React', logo: 'logos:react' },
-      { name: 'TypeScript', logo: 'logos:typescript-icon' },
-      { name: 'CSS', logo: 'simple-icons:css' },
-      { name: 'Markdown', logo: 'logos:markdown' },
-    ],
-    features: [
-      'Content-driven with Astro Content Collections for Markdown posts',
-      'Dark and light mode with persistent theme',
-      'Smooth page transitions with Astro View Transitions API',
-      'Image optimization using astro:assets',
-      'Responsive design for all devices',
-    ],
-    url: '',
-    repo: 'https://github.com/bartosztrusinski/astro-blog',
-  },
-  {
-    name: 'Wordle',
-    description: 'Wordle clone with classic gameplay - guess a five-letter word in six tries',
-    techStack: [
-      { name: 'Preact.js', logo: 'logos:preact' },
-      { name: 'TypeScript', logo: 'logos:typescript-icon' },
-      { name: 'Styled Components', logo: 'simple-icons:styledcomponents' },
-      { name: 'Vite', logo: 'logos:vitejs' },
-    ],
-    features: [
-      'Interactive on-screen and physical keyboard control',
-      'Animated board with reveal, shake, pop, and bounce effects',
-      'Color-coded feedback for correct, present, and absent letters',
-      'Game status feedback with toast notifications',
-      'Random daily solution from a curated word list',
-      'Fully responsive and mobile-friendly design',
-    ],
-    url: '',
-    repo: 'https://github.com/bartosztrusinski/wordle',
-  },
-  {
-    name: 'Tic Tac Toe',
-    description: 'Arcade-style Tic Tac Toe game with ability to time travel through moves',
-    techStack: [
-      { name: 'React', logo: 'logos:react' },
-      { name: 'TypeScript', logo: 'logos:typescript-icon' },
-      { name: 'Tailwind CSS', logo: 'logos:tailwindcss-icon' },
-      { name: 'Vite', logo: 'logos:vitejs' },
-    ],
-    features: [
-      'Classic 2-player Tic Tac Toe gameplay',
-      'Interactive move list with ability to jump to previous moves',
-      'Responsive and modern arcade-style UI',
-      'Color-coded player pieces and moves',
-      'Animated game-over',
-    ],
-    url: '',
-    repo: 'https://github.com/bartosztrusinski/tic-tac-toe',
-  },
-  {
-    name: 'TX Store (🚧WIP)',
-    description: 'Modern e-commerce Next.js platform',
-    techStack: [
-      { name: 'Next.js', logo: 'logos:nextjs-icon' },
-      { name: 'React', logo: 'logos:react' },
-      { name: 'TypeScript', logo: 'logos:typescript-icon' },
-      { name: 'Shadcn/UI', logo: 'simple-icons:shadcnui' },
-      { name: 'Tailwind CSS', logo: 'logos:tailwindcss-icon' },
-      { name: 'Prisma', logo: 'logos:prisma' },
-      { name: 'PostgreSQL', logo: 'logos:postgresql' },
-    ],
-    features: [
-      'Product listing with images, price, and description',
-      'Individual product detail page',
-      'Responsive, modern layout',
-      'Sample data and Prisma seeding for products',
-    ],
-    url: '',
-    repo: 'https://github.com/bartosztrusinski/tx-store',
-  },
-  {
-    name: 'Just Cook (🚧WIP)',
-    description:
-      'Mobile-first recipe app to create, browse and share recipes with shopping cart for ingredients. Developed in collaboration with a team of colleagues',
-    techStack: [
-      { name: 'Next.js', logo: 'logos:nextjs-icon' },
-      { name: 'React', logo: 'logos:react' },
-      { name: 'TypeScript', logo: 'logos:typescript-icon' },
-      { name: 'Shadcn/UI', logo: 'simple-icons:shadcnui' },
-      { name: 'Tailwind CSS', logo: 'logos:tailwindcss-icon' },
-      { name: 'React Hook Form', logo: 'simple-icons:reacthookform' },
-      { name: 'Prisma ORM', logo: 'logos:prisma' },
-      { name: 'PostgreSQL', logo: 'logos:postgresql' },
-      { name: 'Auth.js', logo: 'logos:react' },
-      { name: 'next-intl', logo: 'logos:react' },
-      { name: 'Cloudinary', logo: 'logos:cloudinary-icon' },
-      { name: 'Resend', logo: 'logos:react' },
-      { name: 'Zod', logo: 'logos:zod' },
-    ],
-    features: [
-      'Browse recipes by categories',
-      'Full-text search and filtering',
-      'View and manage a shopping cart with recipe ingredients (individually or in bulk)',
-      'Create and share your own recipes',
-      'Multi-language support (i18n)',
-      'Authentication',
-      'Mobile-first, PWA design',
-      'In-app notifications',
-    ],
-    url: '',
-    repo: 'https://github.com/Azzirr/just-cook',
-  },
-];
+const projects = await getCollection('projects');
 ---
 
 <section id='projects' class='full-width slide-up'>
@@ -297,18 +20,11 @@ const projects: Project[] = [
 
   <div class='breakout mt-10 grid gap-x-6 gap-y-10 sm:grid-cols-2 md:grid-cols-3'>
     {
-      projects.map((project) => (
+      projects.map(({ data: project }) => (
         <article class='mx-auto flex max-w-80 flex-col gap-2 sm:max-w-full'>
           <h3 class='flex items-center gap-1 px-1 text-lg font-semibold'>
-            {project.logo && typeof project.logo.name === 'string' && (
-              <Icon name={project.logo.name} class={`inline size-5 ${project.logo.classes}`} />
-            )}
-            {project.logo && typeof project.logo.name !== 'string' && (
-              <Image
-                src={project.logo.name}
-                alt={`${project.name} logo`}
-                class={`inline size-6 ${project.logo.classes}`}
-              />
+            {project.logo && (
+              <Image src={project.logo} alt={`${project.name} logo`} class='inline size-6' />
             )}
             {project.name}
           </h3>
@@ -316,24 +32,31 @@ const projects: Project[] = [
             href={project.url}
             class='rounded outline-2 outline-offset-4 outline-primary transition-transform duration-300 hover:scale-105 focus-visible:outline'>
             <Image
-              src={project.thumbnail || chirperThumbnail}
+              src={chirperThumbnail}
               alt={`${project.name} web app thumbnail`}
               class='aspect-video w-full rounded object-cover object-top shadow-md'
             />
           </a>
           <p class='p-1'>{project.description}</p>
           <section>
-            <details open>
+            <details>
               <summary class='cursor-pointer px-1 outline-2 outline-offset-2 outline-primary marker:text-primary focus-visible:outline'>
                 <h4 class='inline font-semibold'>Tech Stack</h4>
               </summary>
               <ul class='flex flex-wrap gap-1 py-2 pl-4 text-sm' role='list'>
-                {project.techStack.map((technology) => (
-                  <li class='flex items-center gap-1 rounded border border-solid bg-slate-50 px-2 py-1 shadow'>
-                    <Icon name={technology.logo} class='max-w-5' />
-                    {technology.name}
-                  </li>
-                ))}
+                {project.techStack.map((technologyKey) => {
+                  const technology = technologies[technologyKey];
+
+                  return (
+                    <li class='flex items-center gap-1 rounded border border-solid bg-slate-50 px-2 py-1 shadow'>
+                      <Icon
+                        name={technology.logo}
+                        class:list={['min-h-4 min-w-4 max-w-5', technology.class]}
+                      />
+                      {technology.name}
+                    </li>
+                  );
+                })}
               </ul>
             </details>
           </section>
