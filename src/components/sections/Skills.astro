@@ -1,27 +1,8 @@
 ---
 import { Icon } from 'astro-icon/components';
-import { technologies, type TechnologyKey } from '@/data/technologies';
+import { technologies } from '@/data/technologies';
+import { skills } from '@/data/skills';
 import SectionLink from '@/components/SectionLink.astro';
-
-type Skill = {
-  title: string;
-  technologyKeys: TechnologyKey[];
-};
-
-const skills: Skill[] = [
-  {
-    title: 'Front-End',
-    technologyKeys: ['react', 'javascript', 'typescript', 'next', 'astro', 'tailwind', 'shadcnui'],
-  },
-  {
-    title: 'Back-End',
-    technologyKeys: ['node', 'express', 'prisma', 'drizzle', 'postgres', 'mongodb'],
-  },
-  {
-    title: 'Tools',
-    technologyKeys: ['git', 'webpack', 'zod'],
-  },
-];
 ---
 
 <section id='skills' class='slide-up'>
