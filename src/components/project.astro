@@ -9,11 +9,11 @@ type Props = Project;
 const project = Astro.props;
 ---
 
-<article class='mx-auto flex max-w-80 flex-col gap-2 sm:max-w-full'>
+<article class='flex flex-col gap-2'>
   <h3 class='flex items-center gap-1 px-1 text-lg font-semibold'>
     {
       project.logo && (
-        <Image src={project.logo} alt={`${project.name} logo`} class='inline size-6' />
+        <Image src={project.logo} alt={`${project.name} logo`} class='inline size-5' />
       )
     }
     {project.name}
