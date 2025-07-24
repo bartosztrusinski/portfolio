@@ -10,7 +10,7 @@
     "reactHookForm",
     "prisma",
     "postgres",
-    "auth",
+    "authjs",
     "nextIntl",
     "cloudinary",
     "resend",
