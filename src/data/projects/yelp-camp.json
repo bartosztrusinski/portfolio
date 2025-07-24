@@ -1,0 +1,35 @@
+{
+  "name": "Yelp Camp",
+  "description": "Campsite sharing web app. Discover, review, and share campgrounds with a global community",
+  "techStack": [
+    "ejs",
+    "node",
+    "express",
+    "mongodb",
+    "mongoose",
+    "redis",
+    "joi",
+    "bootstrap",
+    "mapbox",
+    "cloudinary",
+    "resend",
+    "passport",
+    "dateFns",
+    "multer"
+  ],
+  "features": [
+    "Create, edit, and delete campgrounds",
+    "Create, edit, and delete user accounts",
+    "Campground reviews with rating system",
+    "User profiles displaying their campgrounds",
+    "Detailed campground pages with map, reviews, and up to 3 images",
+    "World map with all campground locations",
+    "Pagination and responsive design",
+    "User account email verification and password reset",
+    "Contact form with email sending",
+    "Authentication and authorization",
+    "Input validation, sanitization, and data encryption",
+    "Layered rate limiting"
+  ],
+  "repo": "https://github.com/bartosztrusinski/yelp-camp"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Wordle",
+  "description": "Wordle clone with classic gameplay - guess a five-letter word in six tries",
+  "techStack": ["preact", "typescript", "styledComponents", "vite"],
+  "features": [
+    "Interactive on-screen and physical keyboard control",
+    "Animated board with reveal, shake, pop, and bounce effects",
+    "Color-coded feedback for correct, present, and absent letters",
+    "Game status feedback with toast notifications",
+    "Random daily solution from a curated word list",
+    "Fully responsive and mobile-friendly design"
+  ],
+  "repo": "https://github.com/bartosztrusinski/wordle"
+}

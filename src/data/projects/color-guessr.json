@@ -1,0 +1,13 @@
+{
+  "name": "Color Guessr",
+  "description": "Vibrant web game where you test your color perception by matching colors to their corresponding RGB codes",
+  "techStack": ["solid", "typescript", "tailwind", "daisy", "vite"],
+  "features": [
+    "Color guessing gameplay where you match RGB codes to colors",
+    "Multiple difficulty levels",
+    "Score tracking and persistent high score",
+    "Themeable UI with multiple themes",
+    "Responsive design for desktop and mobile"
+  ],
+  "repo": "https://github.com/bartosztrusinski/color-guessr"
+}

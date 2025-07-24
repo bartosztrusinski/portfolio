@@ -1,0 +1,27 @@
+{
+  "name": "Basic Auth",
+  "description": "Secure, extensible and ready-to-use auth solution for Next.js, built from scratch with emphasis on security and best practices",
+  "techStack": [
+    "next",
+    "react",
+    "typescript",
+    "tailwind",
+    "drizzle",
+    "postgres",
+    "resend",
+    "reactEmail",
+    "zod",
+    "otpAuth"
+  ],
+  "features": [
+    "Credential-based Login & OAuth 2.0 (Google, GitHub, Discord)",
+    "Sign Up with mandatory email verification",
+    "Secure, cookie-based session management",
+    "Middleware-protected routes and Role-Based Access Control (RBAC)",
+    "Two-Factor Authentication (TOTP) with QR code setup and backup codes",
+    "Optimal and secure Database with Pepper, Argon2 hashing, AES-256-GCM encryption, prepared statements and transactions",
+    "Log Out Everywhere to invalidate all active sessions",
+    "Modern email templates with React Email"
+  ],
+  "repo": "https://github.com/bartosztrusinski/basic-auth"
+}

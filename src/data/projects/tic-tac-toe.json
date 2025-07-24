@@ -1,0 +1,13 @@
+{
+  "name": "Tic Tac Toe",
+  "description": "Arcade-style Tic Tac Toe game with ability to time travel through moves",
+  "techStack": ["react", "typescript", "tailwind", "vite"],
+  "features": [
+    "Classic 2-player Tic Tac Toe gameplay",
+    "Interactive move list with ability to jump to previous moves",
+    "Responsive and modern arcade-style UI",
+    "Color-coded player pieces and moves",
+    "Animated game-over"
+  ],
+  "repo": "https://github.com/bartosztrusinski/tic-tac-toe"
+}

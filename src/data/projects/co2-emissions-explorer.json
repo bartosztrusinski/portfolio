@@ -1,0 +1,14 @@
+{
+  "name": "CO2 Emissions Explorer",
+  "description": "Interactive web app to visualize, explore and compare carbon dioxide emissions data from around the world",
+  "techStack": ["typescript", "d3", "topojson", "vite", "css"],
+  "features": [
+    "Interactive world map to visualize CO2 emissions for each country",
+    "Switch between total emissions and emissions per capita",
+    "Yearly data slider to see how emissions change by year",
+    "Country-specific histogram for emission trends",
+    "Pie chart showing emission distribution by continent",
+    "Hover tooltips with detailed information"
+  ],
+  "repo": "https://github.com/bartosztrusinski/co2-emissions-explorer"
+}

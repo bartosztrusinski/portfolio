@@ -1,0 +1,13 @@
+{
+  "name": "Astro Blog",
+  "description": "Minimalist blog about astronomy and astrophysics. It serves as a personal space to share thoughts about the cosmos",
+  "techStack": ["astro", "react", "typescript", "css", "markdown"],
+  "features": [
+    "Content-driven with Astro Content Collections for Markdown posts",
+    "Dark and light mode with persistent theme",
+    "Smooth page transitions with Astro View Transitions API",
+    "Image optimization using astro:assets",
+    "Responsive design for all devices"
+  ],
+  "repo": "https://github.com/bartosztrusinski/astro-blog"
+}

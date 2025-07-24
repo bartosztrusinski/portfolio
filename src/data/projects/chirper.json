@@ -1,0 +1,36 @@
+{
+  "name": "Chirper",
+  "logo": "../../assets/chirper-logo.png",
+  "thumbnail": "../../assets/chirper.png",
+  "description": "Social media web application inspired by Twitter. Create posts, follow others and explore with a variety of features like infinite scrolling and search filtering",
+  "techStack": [
+    "react",
+    "tanStackQuery",
+    "tanStackRouter",
+    "typescript",
+    "sass",
+    "reactHookForm",
+    "reactHotToast",
+    "axios",
+    "webpack",
+    "swc",
+    "zod",
+    "node",
+    "express",
+    "mongodb",
+    "mongoose",
+    "jwt"
+  ],
+  "features": [
+    "Post, like, delete and reply to Chirps",
+    "Manage user accounts - create, edit, and follow",
+    "Scrollable feed with infinite scrolling",
+    "Explore all Chirps and filter results on the search page",
+    "View created or liked Chirps",
+    "Responsive design with light/dark mode",
+    "Notifications and data caching with optimistic updates",
+    "Authentication and authorization",
+    "Client and server-side validation"
+  ],
+  "repo": "https://github.com/bartosztrusinski/chirper"
+}

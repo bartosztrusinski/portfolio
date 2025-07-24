@@ -1,0 +1,30 @@
+{
+  "name": "Just Cook (🚧WIP)",
+  "description": "Mobile-first recipe app to create, browse and share recipes with shopping cart for ingredients. Developed in collaboration with a team of colleagues",
+  "techStack": [
+    "next",
+    "react",
+    "typescript",
+    "shadcnui",
+    "tailwind",
+    "reactHookForm",
+    "prisma",
+    "postgres",
+    "auth",
+    "nextIntl",
+    "cloudinary",
+    "resend",
+    "zod"
+  ],
+  "features": [
+    "Browse recipes by categories",
+    "Full-text search and filtering",
+    "View and manage a shopping cart with recipe ingredients (individually or in bulk)",
+    "Create and share your own recipes",
+    "Multi-language support (i18n)",
+    "Authentication",
+    "Mobile-first, PWA design",
+    "In-app notifications"
+  ],
+  "repo": "https://github.com/Azzirr/just-cook"
+}
