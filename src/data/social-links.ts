@@ -1,0 +1,19 @@
+type Link = {
+  name: string;
+  url: string;
+  icon: string;
+};
+
+export const socialLinks: Link[] = [
+  {
+    name: 'GitHub',
+    url: 'https://github.com/bartosztrusinski',
+    icon: 'simple-icons:github',
+  },
+  {
+    name: 'LinkedIn',
+    url: 'https://www.linkedin.com/in/bartosz-trusinski',
+    icon: 'simple-icons:linkedin',
+  },
+  { name: 'CV', url: '#', icon: 'lucide:file-user' },
+];

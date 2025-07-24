@@ -1,28 +1,13 @@
 ---
 import { Icon } from 'astro-icon/components';
-
-type Link = {
-  name: string;
-  url: string;
-  icon: string;
-};
-
-const links: Link[] = [
-  { name: 'GitHub', url: 'https://github.com/bartosztrusinski', icon: 'simple-icons:github' },
-  {
-    name: 'LinkedIn',
-    url: 'https://www.linkedin.com/in/bartosz-trusinski',
-    icon: 'simple-icons:linkedin',
-  },
-  { name: 'CV', url: '#', icon: 'lucide:file-user' },
-];
+import { socialLinks } from '@/data/social-links';
 ---
 
 <footer class='bg-slate-900 bg-pattern py-5'>
   <div
     class='mx-5 mb-4 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-lg font-bold'>
     {
-      links.map(({ name, url, icon }) => (
+      socialLinks.map(({ name, url, icon }) => (
         <a href={url} target='_blank' class='flex items-center gap-1 rounded px-1 text-primary'>
           <Icon name={icon} class='size-[1.25em]' />
           {name}
