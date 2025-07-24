@@ -1,7 +1,5 @@
 {
   "name": "Chirper",
-  "logo": "../../assets/chirper-logo.png",
-  "thumbnail": "../../assets/chirper.png",
   "description": "Social media web application inspired by Twitter. Create posts, follow others and explore with a variety of features like infinite scrolling and search filtering",
   "techStack": [
     "react",
@@ -32,5 +30,8 @@
     "Authentication and authorization",
     "Client and server-side validation"
   ],
-  "repo": "https://github.com/bartosztrusinski/chirper"
+  "logo": "../../assets/chirper/logo.png",
+  "thumbnail": "../../assets/chirper/thumbnail.png",
+  "repo": "https://github.com/bartosztrusinski/chirper",
+  "url": "https://chirper.trusinski.dev"
 }

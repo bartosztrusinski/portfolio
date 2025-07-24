@@ -23,5 +23,8 @@
     "Log Out Everywhere to invalidate all active sessions",
     "Modern email templates with React Email"
   ],
-  "repo": "https://github.com/bartosztrusinski/basic-auth"
+  "logo": "../../assets/basic-auth/logo.png",
+  "thumbnail": "../../assets/basic-auth/thumbnail.png",
+  "repo": "https://github.com/bartosztrusinski/basic-auth",
+  "url": "https://basic-auth.trusinski.dev"
 }

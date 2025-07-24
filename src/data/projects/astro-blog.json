@@ -1,5 +1,5 @@
 {
-  "name": "Astro Blog",
+  "name": "🚀 Astro Blog",
   "description": "Minimalist blog about astronomy and astrophysics. It serves as a personal space to share thoughts about the cosmos",
   "techStack": ["astro", "react", "typescript", "css", "markdown"],
   "features": [
@@ -9,5 +9,7 @@
     "Image optimization using astro:assets",
     "Responsive design for all devices"
   ],
-  "repo": "https://github.com/bartosztrusinski/astro-blog"
+  "thumbnail": "../../assets/astro-blog/thumbnail.png",
+  "repo": "https://github.com/bartosztrusinski/astro-blog",
+  "url": "https://astro-blog.trusinski.dev"
 }

@@ -1,6 +1,6 @@
 {
-  "name": "Just Cook (🚧WIP)",
-  "description": "Mobile-first recipe app to create, browse and share recipes with shopping cart for ingredients. Developed in collaboration with a team of colleagues",
+  "name": "Just Cook",
+  "description": "Mobile-first recipe app to create, browse and share recipes with shopping cart for ingredients. Developed in collaboration with a team of colleagues. 🚧WIP🚧",
   "techStack": [
     "next",
     "react",
@@ -26,5 +26,7 @@
     "Mobile-first, PWA design",
     "In-app notifications"
   ],
+  "logo": "../../assets/just-cook/logo.webp",
+  "thumbnail": "../../assets/just-cook/thumbnail.png",
   "repo": "https://github.com/Azzirr/just-cook"
 }

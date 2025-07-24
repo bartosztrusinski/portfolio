@@ -1,6 +1,6 @@
 {
-  "name": "TX Store (🚧WIP)",
-  "description": "Modern e-commerce Next.js platform",
+  "name": "TX Store",
+  "description": "Modern e-commerce Next.js platform. 🚧WIP🚧",
   "techStack": ["next", "react", "typescript", "shadcnui", "tailwind", "prisma", "postgres"],
   "features": [
     "Product listing with images, price, and description",
@@ -8,5 +8,8 @@
     "Responsive, modern layout",
     "Sample data and Prisma seeding for products"
   ],
-  "repo": "https://github.com/bartosztrusinski/tx-store"
+  "logo": "../../assets/tx-store/logo.svg",
+  "thumbnail": "../../assets/tx-store/thumbnail.png",
+  "repo": "https://github.com/bartosztrusinski/tx-store",
+  "url": "https://tx-store.trusinski.dev"
 }

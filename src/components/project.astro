@@ -3,7 +3,6 @@ import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
 import type { Project } from '@/content.config';
 import { technologies } from '@/data/technologies';
-import chirperThumbnail from '@/assets/chirper-thumbnail.png';
 
 type Props = Project;
 
@@ -23,7 +22,7 @@ const project = Astro.props;
     href={project.url}
     class='rounded outline-2 outline-offset-4 outline-primary transition-transform duration-300 hover:scale-105 focus-visible:outline'>
     <Image
-      src={chirperThumbnail}
+      src={project.thumbnail}
       alt={`${project.name} web app thumbnail`}
       class='aspect-video w-full rounded object-cover object-top shadow-md'
     />

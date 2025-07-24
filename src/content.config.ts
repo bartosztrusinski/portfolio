@@ -8,12 +8,12 @@ const projectSchema = ({ image }: SchemaContext) =>
   z.object({
     name: z.string(),
     description: z.string(),
-    logo: image().optional(),
-    thumbnail: image().optional(),
     techStack: z.array(z.enum(technologyKeys as [TechnologyKey, ...TechnologyKey[]])),
     features: z.array(z.string()),
-    url: z.string().url().optional(),
+    logo: image().optional(),
+    thumbnail: image(),
     repo: z.string().url(),
+    url: z.string().url().optional(),
   });
 
 const projects = defineCollection({

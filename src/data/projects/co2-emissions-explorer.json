@@ -10,5 +10,7 @@
     "Pie chart showing emission distribution by continent",
     "Hover tooltips with detailed information"
   ],
-  "repo": "https://github.com/bartosztrusinski/co2-emissions-explorer"
+  "thumbnail": "../../assets/co2-emissions-explorer/thumbnail.png",
+  "repo": "https://github.com/bartosztrusinski/co2-emissions-explorer",
+  "url": "https://co2-emissions-explorer.trusinski.dev"
 }

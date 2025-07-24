@@ -10,5 +10,7 @@
     "Random daily solution from a curated word list",
     "Fully responsive and mobile-friendly design"
   ],
-  "repo": "https://github.com/bartosztrusinski/wordle"
+  "thumbnail": "../../assets/wordle/thumbnail.png",
+  "repo": "https://github.com/bartosztrusinski/wordle",
+  "url": "https://wordle.trusinski.dev"
 }
