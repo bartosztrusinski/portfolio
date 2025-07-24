@@ -1,6 +1,6 @@
 import type { TechnologyKey } from '@/data/technologies';
 
-type Skill = {
+export type Skill = {
   title: string;
   technologyKeys: TechnologyKey[];
 };

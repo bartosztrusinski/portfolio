@@ -1,0 +1,30 @@
+---
+import { Icon } from 'astro-icon/components';
+import { technologies } from '@/data/technologies';
+import type { Skill } from '@/data/skills';
+
+type Props = Skill;
+
+const { title, technologyKeys } = Astro.props;
+---
+
+<section>
+  <h3 class='mb-1 text-lg font-semibold'>{title}</h3>
+  <ul class='flex flex-wrap gap-3' role='list'>
+    {
+      technologyKeys.map((technologyKey) => {
+        const technology = technologies[technologyKey];
+
+        return (
+          <li class='flex items-center gap-2 rounded-lg border px-2 py-1 shadow-md'>
+            <Icon
+              name={technology.logo}
+              class:list={['min-h-4 min-w-4 max-w-5', technology.class]}
+            />
+            {technology.name}
+          </li>
+        );
+      })
+    }
+  </ul>
+</section>
