@@ -1,29 +1,13 @@
 type ButtonState = 'default' | 'loading';
 
-type ButtonStateValues = Record<
-  ButtonState,
-  {
-    text: string;
-    disabled: boolean;
-  }
->;
+type ButtonStateValues = Record<ButtonState, { text: string; disabled: boolean }>;
 
-const DEFAULT_STATE_VALUES: ButtonStateValues = Object.freeze({
-  default: {
-    text: 'Submit',
-    disabled: false,
-  },
-  loading: {
-    text: 'Loading...',
-    disabled: true,
-  },
-});
+const DEFAULT_STATE_VALUES: ButtonStateValues = {
+  default: { text: 'Submit', disabled: false },
+  loading: { text: 'Loading...', disabled: true },
+};
 
-export function useButtonStateManager(btn: HTMLButtonElement, loadingText?: string) {
-  return new Button(btn, loadingText);
-}
-
-export class Button {
+export class ButtonStateManager {
   private btn: HTMLButtonElement;
   private stateValues: ButtonStateValues = DEFAULT_STATE_VALUES;
 
@@ -49,7 +33,7 @@ export class Button {
     this.btn.removeAttribute('disabled');
   }
 
-  setState(state: ButtonState) {
+  public setState(state: ButtonState) {
     const newState = this.stateValues[state];
     this.text = newState.text;
     newState.disabled ? this.disable() : this.enable();
