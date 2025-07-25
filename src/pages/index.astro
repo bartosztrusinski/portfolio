@@ -62,7 +62,7 @@ import Footer from '@/components/sections/footer.astro';
   @media (prefers-reduced-motion: no-preference) {
     .slide-up {
       opacity: 0;
-      transform: translateY(3rem);
+      transform: translateY(4rem);
       filter: blur(0.2rem);
       transition:
         opacity 500ms ease-out,
@@ -77,3 +77,12 @@ import Footer from '@/components/sections/footer.astro';
     }
   }
 </style>
+<noscript>
+  <style>
+    .slide-up {
+      opacity: 1 !important;
+      transform: none !important;
+      filter: none !important;
+    }
+  </style>
+</noscript>
