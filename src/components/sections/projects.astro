@@ -7,16 +7,18 @@ const projects = await getCollection('projects');
 const orderedProjects = projects.sort((a, b) => a.data.order - b.data.order);
 ---
 
-<section id='projects' class='full-width slide-up'>
-  <h2 class='text-2xl font-bold'>
-    <SectionLink sectionId='projects'>Projects</SectionLink>
-  </h2>
-  <p>
-    Take a look at some of the projects I've worked on. They showcase my skills and passion for
-    building functional and user-friendly applications
-  </p>
+<section id='projects' class='full-width'>
+  <div class='slide-up full-width'>
+    <h2 class='text-2xl font-bold'>
+      <SectionLink sectionId='projects'>Projects</SectionLink>
+    </h2>
+    <p>
+      Take a look at some of the projects I've worked on. They showcase my skills and passion for
+      building functional and user-friendly applications
+    </p>
 
-  <div class='breakout mt-10 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3'>
-    {orderedProjects.map((project) => <Project {...project.data} />)}
+    <div class='breakout mt-10 grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3'>
+      {orderedProjects.map((project) => <Project {...project.data} />)}
+    </div>
   </div>
 </section>
