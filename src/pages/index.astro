@@ -62,17 +62,17 @@ import Footer from '@/components/sections/footer.astro';
   @media (prefers-reduced-motion: no-preference) {
     .slide-up {
       opacity: 0;
-      transform: translateY(4rem);
-      filter: blur(0.2rem);
+      transform: translateY(2rem) scale(0.95);
+      filter: blur(0.4rem);
       transition:
-        opacity 500ms ease-out,
-        transform 500ms ease-out,
-        filter 500ms ease-out;
+        opacity 0.5s ease,
+        transform 0.5s cubic-bezier(0, 0, 0.2, 1),
+        filter 0.5s ease;
     }
 
     .slide-up.is-visible {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(0) scale(1);
       filter: blur(0);
     }
   }
