@@ -1,0 +1,17 @@
+{
+  "name": "Portfolio",
+  "description": "Modern, accessible and fast portfolio that you are currently on",
+  "techStack": ["astro", "typescript", "tailwind", "markdown"],
+  "features": [
+    "Responsive, mobile-first design",
+    "SEO-friendly and highly performant",
+    "Smooth animations and interactivity",
+    "Progressive enhancements, fully functional without JavaScript",
+    "Adapts to user motion preferences",
+    "Accessibility-focused"
+  ],
+  "logo": "../../assets/portfolio/logo.png",
+  "thumbnail": "../../assets/portfolio/thumbnail.png",
+  "repo": "https://github.com/bartosztrusinski/portfolio",
+  "order": 7
+}
