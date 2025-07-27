@@ -1,4 +1,4 @@
-# Bartosz Trusiński – Portfolio
+# <img width="28" height="28" alt="Portfolio logo" src="https://github.com/user-attachments/assets/37ea759e-f86f-4d94-bfd2-7f72502082e2" /> Portfolio
 
 Modern, accessible and blazing fast personal portfolio website
 
