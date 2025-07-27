@@ -18,16 +18,24 @@ const project = Astro.props;
     }
     {project.name}
   </h3>
-  <a
-    href={project.url}
-    target='_blank'
-    class='rounded outline-2 outline-offset-4 outline-primary transition-transform duration-300 hover:scale-105 focus-visible:outline'>
-    <Image
-      src={project.thumbnail}
-      alt={`${project.name} web app thumbnail`}
-      class='aspect-video w-full rounded object-cover object-top shadow-md'
-    />
-  </a>
+  {
+    project.url ?
+      <a
+        href={project.url}
+        target='_blank'
+        class='rounded outline-2 outline-offset-4 outline-primary transition-transform duration-300 hover:scale-105 focus-visible:outline'>
+        <Image
+          src={project.thumbnail}
+          alt={`${project.name} app thumbnail`}
+          class='aspect-video w-full rounded object-cover object-top shadow-md'
+        />
+      </a>
+    : <Image
+        src={project.thumbnail}
+        alt={`${project.name} app thumbnail`}
+        class='aspect-video w-full rounded object-cover object-top shadow-md'
+      />
+  }
   <p class='p-1'>{project.description}</p>
   <section>
     <details>
