@@ -20,3 +20,5 @@ Modern, accessible and blazing fast personal portfolio website
 - [Astro Icon](https://www.astroicon.dev/)
 
 ## 📷 Screenshots
+
+<img width="1895" height="887" alt="Portfolio" src="https://github.com/user-attachments/assets/056dfdeb-d0f0-490f-8ef3-b4056a837de3" />
