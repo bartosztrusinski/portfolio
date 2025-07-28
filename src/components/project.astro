@@ -23,11 +23,11 @@ const project = Astro.props;
       <a
         href={project.url}
         target='_blank'
-        class='link outline-[6px] outline-offset-0 transition-transform duration-300 hover:scale-105'>
+        class='link shadow-md outline-[6px] outline-offset-0 transition duration-300 hover:scale-105 hover:shadow-xl'>
         <Image
           src={project.thumbnail}
           alt={`${project.name} app thumbnail`}
-          class='aspect-video w-full rounded object-cover object-top shadow-md'
+          class='aspect-video w-full rounded object-cover object-top'
         />
       </a>
     : <Image
@@ -78,7 +78,7 @@ const project = Astro.props;
       </ul>
     </details>
   </section>
-  <section class='mt-2 flex gap-2'>
+  <section class='mt-1 flex gap-2'>
     {
       project.url && (
         <a
