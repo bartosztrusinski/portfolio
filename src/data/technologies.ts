@@ -60,7 +60,7 @@ const _technologies = {
   css: { name: 'CSS', logo: 'simple-icons:css', class: 'text-[#663399]' },
   markdown: { name: 'Markdown', logo: 'logos:markdown' },
   daisy: { name: 'daisyUI', logo: 'logos:daisyui-icon' },
-  preact: { name: 'Preact.js', logo: 'logos:preact' },
+  preact: { name: 'Preact', logo: 'logos:preact' },
   authjs: { name: 'Auth.js', logo: 'authjs' },
   webpack: { name: 'Webpack', logo: 'logos:webpack' },
   passport: { name: 'Passport', logo: 'logos:passport' },
