@@ -7,7 +7,7 @@
         id='name'
         name='name'
         autocomplete='name'
-        placeholder='John Doe'
+        placeholder='Michael Scott'
         class='input'
         required
       />
@@ -19,7 +19,7 @@
         id='email'
         name='email'
         autocomplete='email'
-        placeholder='john@doe.com'
+        placeholder='michael@dundermifflin.com'
         class='input'
         required
       />
@@ -53,7 +53,7 @@
   {/* Redirect URL */}
   <input type='hidden' name='redirect' value={`${Astro.url}thank-you`} />
 
-  <button type='submit' class='btn ms-auto block w-full sm:w-max'>Send message</button>
+  <button type='submit' class='btn ms-auto block w-full min-w-40 sm:w-max'>Send message</button>
 </form>
 
 <script>
