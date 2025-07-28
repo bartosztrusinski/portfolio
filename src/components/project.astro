@@ -23,7 +23,7 @@ const project = Astro.props;
       <a
         href={project.url}
         target='_blank'
-        class='rounded outline-2 outline-offset-4 outline-primary transition-transform duration-300 hover:scale-105 focus-visible:outline'>
+        class='link outline-[6px] outline-offset-0 transition-transform duration-300 hover:scale-105'>
         <Image
           src={project.thumbnail}
           alt={`${project.name} app thumbnail`}
@@ -39,8 +39,7 @@ const project = Astro.props;
   <p class='p-1'>{project.description}</p>
   <section>
     <details>
-      <summary
-        class='cursor-pointer px-1 outline-2 outline-offset-2 outline-primary marker:text-primary focus-visible:outline'>
+      <summary class='link cursor-pointer px-1 marker:text-primary'>
         <h4 class='inline font-semibold'>Tech Stack</h4>
       </summary>
       <ul class='flex flex-wrap gap-1 py-2 pl-4 text-sm' role='list'>
@@ -64,8 +63,7 @@ const project = Astro.props;
   </section>
   <section>
     <details>
-      <summary
-        class='cursor-pointer px-1 outline-2 outline-offset-2 outline-primary marker:text-primary focus-visible:outline'>
+      <summary class='link cursor-pointer px-1 marker:text-primary'>
         <h4 class='inline font-semibold'>Features</h4>
       </summary>
       <ul class='py-2 pl-2 font-light'>
@@ -86,7 +84,7 @@ const project = Astro.props;
         <a
           href={project.url}
           target='_blank'
-          class='flex grow items-center justify-center gap-1 rounded bg-primary p-2 text-center font-semibold outline-offset-2'>
+          class='btn flex grow basis-1/2 items-center justify-center gap-1'>
           <Icon name='lucide:square-arrow-out-up-right' size={18} />
           Visit
         </a>
@@ -95,7 +93,7 @@ const project = Astro.props;
     <a
       href={project.repo}
       target='_blank'
-      class='flex grow items-center justify-center gap-1 rounded bg-primary p-2 text-center font-semibold outline-offset-2'>
+      class='btn flex grow basis-1/2 items-center justify-center gap-1'>
       <Icon name='lucide:github' size={18} />
       Repo
     </a>

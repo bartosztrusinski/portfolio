@@ -8,7 +8,10 @@ import { socialLinks } from '@/data/social-links';
     class='mx-5 mb-4 flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-lg font-bold'>
     {
       socialLinks.map(({ name, url, icon }) => (
-        <a href={url} target='_blank' class='flex items-center gap-1 rounded px-1 text-primary'>
+        <a
+          href={url}
+          target='_blank'
+          class='link flex items-center gap-1 rounded px-1 text-primary outline-2'>
           <Icon name={icon} class='size-[1.25em]' />
           {name}
         </a>

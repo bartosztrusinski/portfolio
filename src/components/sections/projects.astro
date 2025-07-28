@@ -7,7 +7,7 @@ const projects = await getCollection('projects');
 const orderedProjects = projects.sort((a, b) => a.data.order - b.data.order);
 ---
 
-<section id='projects' class='full-width'>
+<section id='projects' class='full-width bg-slate-100'>
   <div class='slide-up full-width'>
     <h2 class='text-2xl font-bold'>
       <SectionLink sectionId='projects'>Projects</SectionLink>

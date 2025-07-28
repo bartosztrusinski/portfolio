@@ -8,7 +8,7 @@
         name='name'
         autocomplete='name'
         placeholder='John Doe'
-        class='rounded-sm px-2 py-1'
+        class='input'
         required
       />
     </div>
@@ -20,7 +20,7 @@
         name='email'
         autocomplete='email'
         placeholder='john@doe.com'
-        class='rounded-sm px-2 py-1'
+        class='input'
         required
       />
     </div>
@@ -33,7 +33,7 @@
       name='message'
       rows='3'
       maxlength='500'
-      class='min-h-24 rounded-sm px-2 py-1'
+      class='input min-h-24'
       style='field-sizing: content;'
       required></textarea>
   </div>
@@ -53,11 +53,7 @@
   {/* Redirect URL */}
   <input type='hidden' name='redirect' value={`${Astro.url}thank-you`} />
 
-  <button
-    type='submit'
-    class='ms-auto block w-full min-w-36 rounded bg-primary px-4 py-2 font-semibold disabled:cursor-not-allowed disabled:opacity-50 sm:w-max'>
-    Send message
-  </button>
+  <button type='submit' class='btn ms-auto block w-full sm:w-max'>Send message</button>
 </form>
 
 <script>
