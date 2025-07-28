@@ -33,7 +33,7 @@ import Footer from '@/components/sections/footer.astro';
   }
 
   details::details-content {
-    @apply h-0 transition-[height,content-visibility] duration-300 ease-out [transition-behavior:allow-discrete];
+    @apply h-0 transition-[height,content-visibility] duration-300 ease-out [transition-behavior:allow-discrete] motion-reduce:transition-none;
   }
 
   details[open]::details-content {
@@ -41,7 +41,7 @@ import Footer from '@/components/sections/footer.astro';
   }
 
   .btn {
-    @apply rounded bg-primary px-6 py-2 text-center font-semibold shadow outline-4 outline-offset-[3px] outline-primary transition-transform duration-150 ease-in-out will-change-transform hover:scale-105 focus-visible:outline active:scale-95 disabled:cursor-not-allowed disabled:opacity-50;
+    @apply hover:bg-primary-darker rounded bg-primary px-6 py-2 text-center font-semibold shadow outline-4 outline-offset-[3px] outline-primary duration-150 ease-out focus-visible:outline active:!scale-95 disabled:transform-none disabled:cursor-not-allowed disabled:opacity-50 motion-safe:transition-[transform,opacity,background-color] motion-safe:will-change-transform motion-safe:hover:scale-105 motion-reduce:transition-[opacity,background-color];
   }
 
   .link {

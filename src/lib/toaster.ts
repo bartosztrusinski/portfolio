@@ -45,6 +45,7 @@ const TOAST_CLASSES = [
   'shadow-xl',
   'z-50',
   'transition-transform',
+  'motion-reduce:transition-none',
   'duration-500',
   'ease-bounce',
   'translate-y-[var(--translate)]',

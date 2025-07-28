@@ -23,7 +23,7 @@ const project = Astro.props;
       <a
         href={project.url}
         target='_blank'
-        class='link shadow-md outline-[6px] outline-offset-0 transition duration-300 hover:scale-105 hover:shadow-xl'>
+        class='link shadow-md outline-[6px] outline-offset-0 transition-[transform,box-shadow] duration-300 ease-out hover:shadow-xl motion-safe:hover:scale-105'>
         <Image
           src={project.thumbnail}
           alt={`${project.name} app thumbnail`}
