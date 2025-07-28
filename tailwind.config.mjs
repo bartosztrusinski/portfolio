@@ -4,7 +4,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#FFBF00',
+        primary: {
+          DEFAULT: 'hsl(45, 100%, 50%)',
+          darker: 'hsl(43, 100%, 49%)',
+        },
       },
       transitionTimingFunction: {
         bounce: 'cubic-bezier(0.73, -0.83, 0.22, 1.75)',
