@@ -16,4 +16,5 @@ export const socialLinks: Link[] = [
     icon: 'simple-icons:linkedin',
   },
   { name: 'CV', url: '#', icon: 'lucide:file-user' },
+  { name: 'bartosz@trusinski.dev', url: 'mailto:bartosz@trusinski.dev', icon: 'lucide:mail' },
 ];
