@@ -10,8 +10,8 @@ import Skill from '@/components/skill.astro';
       <SectionLink sectionId='skills'>Skills</SectionLink>
     </h2>
     <p class='mb-4'>Technologies and tools I use to build amazing web experiences</p>
-    <article class='space-y-6'>
+    <div class='space-y-6'>
       {skills.map((props) => <Skill {...props} />)}
-    </article>
+    </div>
   </div>
 </section>
