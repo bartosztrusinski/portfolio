@@ -8,29 +8,29 @@ const DEFAULT_STATE_VALUES: ButtonStateValues = {
 };
 
 export class ButtonStateManager {
-  private btn: HTMLButtonElement;
+  private button: HTMLButtonElement;
   private stateValues: ButtonStateValues = DEFAULT_STATE_VALUES;
 
-  constructor(btn: HTMLButtonElement, loadingText?: string) {
-    this.btn = btn;
+  constructor(buttonElement: HTMLButtonElement, loadingText?: string) {
+    this.button = buttonElement;
     this.stateValues.default.text = this.text ?? this.stateValues.default.text;
     this.stateValues.loading.text = loadingText ?? this.stateValues.loading.text;
   }
 
   private get text() {
-    return this.btn.textContent ?? '';
+    return this.button.textContent ?? '';
   }
 
   private set text(value: string) {
-    this.btn.textContent = value.trim();
+    this.button.textContent = value.trim();
   }
 
   private disable() {
-    this.btn.setAttribute('disabled', 'true');
+    this.button.setAttribute('disabled', 'true');
   }
 
   private enable() {
-    this.btn.removeAttribute('disabled');
+    this.button.removeAttribute('disabled');
   }
 
   public setState(state: ButtonState) {

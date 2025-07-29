@@ -48,7 +48,7 @@ const TOAST_CLASSES = [
   'motion-reduce:transition-none',
   'duration-500',
   'ease-bounce',
-  'translate-y-[var(--translate)]',
+  'translate-y-(--toast-translate)',
 ];
 
 type ToasterOptions = {
@@ -129,7 +129,7 @@ class Toaster extends Function {
 
     this.toast.classList.remove(...allPositionClasses);
     this.toast.classList.add(...TOAST_POSITION_CLASSES[y], ...TOAST_POSITION_CLASSES[x]);
-    this.toast.style.setProperty('--translate', y === 'top' ? '-200%' : '200%');
+    this.toast.style.setProperty('--toast-translate', y === 'top' ? '-200%' : '200%');
   }
 
   private showToast(message: string, variation: ToastVariation = 'default') {
@@ -150,7 +150,7 @@ class Toaster extends Function {
   }
 
   private set hidden(value: boolean) {
-    this.toast.classList.toggle('translate-y-[var(--translate)]', value);
+    this.toast.classList.toggle('translate-y-(--toast-translate)', value);
   }
 
   private removeVariationClasses() {
