@@ -10,9 +10,9 @@ import Footer from '@/components/sections/footer.astro';
 
 <RootLayout>
   <div
-    class='fixed inset-0 -z-10 h-full w-full bg-slate-50 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:9rem_6rem] [mask-image:radial-gradient(ellipse_80%_20%_at_top,transparent_50%,#000_110%)] sm:[mask-image:radial-gradient(ellipse_60%_40%_at_top,transparent_50%,#000_110%)]'>
+    class='fixed inset-0 -z-10 h-full w-full bg-slate-50 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] mask-[radial-gradient(ellipse_80%_20%_at_top,transparent_50%,#000_110%)] bg-size-[9rem_6rem] sm:mask-[radial-gradient(ellipse_60%_40%_at_top,transparent_50%,#000_110%)]'>
   </div>
-  <main class='content-grid *:pb-12 *:pt-8'>
+  <main class='content-grid *:pt-8 *:pb-12'>
     <Hero />
     <AboutMe />
     <Skills />
@@ -21,102 +21,4 @@ import Footer from '@/components/sections/footer.astro';
   </main>
   <Footer />
 </RootLayout>
-
 <script src='../lib/scroll-animations.ts'></script>
-<style is:global>
-  :root {
-    interpolate-size: allow-keywords;
-  }
-
-  details {
-    @apply overflow-hidden;
-  }
-
-  details::details-content {
-    @apply h-0 transition-[height,content-visibility] duration-300 ease-out [transition-behavior:allow-discrete] motion-reduce:transition-none;
-  }
-
-  details[open]::details-content {
-    @apply h-auto;
-  }
-
-  .btn {
-    @apply hover:bg-primary-darker rounded bg-primary px-6 py-2 text-center font-semibold shadow outline-4 outline-offset-[3px] outline-primary duration-150 ease-out focus-visible:outline active:!scale-95 disabled:transform-none disabled:cursor-not-allowed disabled:opacity-50 motion-safe:transition-[transform,opacity,background-color] motion-safe:will-change-transform motion-safe:hover:scale-105 motion-reduce:transition-[opacity,background-color];
-  }
-
-  .link {
-    @apply rounded outline-4 outline-offset-1 outline-primary focus-visible:outline;
-  }
-
-  .input {
-    @apply rounded border border-solid border-slate-200 bg-white px-4 py-2 text-base outline-2 outline-primary focus:outline;
-  }
-
-  p {
-    @apply text-pretty text-justify;
-  }
-
-  .content-grid,
-  .full-width {
-    --padding-inline: 2rem;
-    --content-max-width: 65ch;
-    --breakout-max-width: 90ch;
-
-    @media (max-width: 340px) {
-      --padding-inline: 1.2rem;
-    }
-
-    --breakout-size: calc((var(--breakout-max-width) - var(--content-max-width)) / 2);
-
-    --full-width: minmax(var(--padding-inline), 1fr);
-    --breakout: minmax(0, var(--breakout-size));
-    --content: min(100% - var(--padding-inline) * 2, var(--content-max-width));
-
-    display: grid;
-    grid-template-columns:
-      [full-width-start] var(--full-width)
-      [breakout-start] var(--breakout)
-      [content-start] var(--content) [content-end]
-      var(--breakout) [breakout-end]
-      var(--full-width) [full-width-end];
-
-    & > :not(.breakout, .full-width) {
-      grid-column: content;
-    }
-
-    & > .breakout {
-      grid-column: breakout;
-    }
-
-    & > .full-width {
-      grid-column: full-width;
-    }
-  }
-
-  @media (prefers-reduced-motion: no-preference) {
-    .slide-up {
-      opacity: 0;
-      transform: translateY(2rem) scale(0.95);
-      filter: blur(0.4rem);
-      transition:
-        opacity 0.5s ease,
-        transform 0.5s cubic-bezier(0, 0, 0.2, 1),
-        filter 0.5s ease;
-    }
-
-    .slide-up.is-visible {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-      filter: blur(0);
-    }
-  }
-</style>
-<noscript>
-  <style>
-    .slide-up {
-      opacity: 1 !important;
-      transform: none !important;
-      filter: none !important;
-    }
-  </style>
-</noscript>

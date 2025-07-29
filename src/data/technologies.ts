@@ -36,11 +36,11 @@ const _technologies = {
   reactHookForm: {
     name: 'React Hook Form',
     logo: 'simple-icons:reacthookform',
-    class: 'bg-[#ec5990] rounded-sm p-[3px] text-white stroke-white',
+    class: 'bg-[#ec5990] rounded-xs p-[3px] text-white stroke-white',
   },
   reactHotToast: { name: 'React Hot Toast', logo: 'logos:react' },
   drizzle: { name: 'Drizzle ORM', logo: 'drizzle' },
-  resend: { name: 'Resend', logo: 'resend', class: 'bg-black rounded' },
+  resend: { name: 'Resend', logo: 'resend', class: 'bg-black rounded-sm' },
   reactEmail: { name: 'React Email', logo: 'react-email' },
   otpAuth: { name: 'OTPAuth', logo: 'otp-auth' },
   cloudinary: { name: 'Cloudinary', logo: 'logos:cloudinary-icon' },
@@ -54,7 +54,7 @@ const _technologies = {
   shadcnui: {
     name: 'Shadcn/UI',
     logo: 'simple-icons:shadcnui',
-    class: 'bg-black text-white rounded-sm p-1',
+    class: 'bg-black text-white rounded-xs p-1',
   },
   vite: { name: 'Vite', logo: 'logos:vitejs' },
   css: { name: 'CSS', logo: 'simple-icons:css', class: 'text-[#663399]' },

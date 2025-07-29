@@ -16,10 +16,10 @@ const { title, technologyKeys } = Astro.props;
         const technology = technologies[technologyKey];
 
         return (
-          <li class='flex items-center gap-2 rounded-lg border px-2 py-1 shadow-md'>
+          <li class='flex items-center gap-2 rounded-lg border border-slate-200 px-2 py-1 shadow-md'>
             <Icon
               name={technology.logo}
-              class:list={['min-h-4 min-w-4 max-w-5', technology.class]}
+              class:list={['min-h-4 max-w-5 min-w-4', technology.class]}
             />
             {technology.name}
           </li>

@@ -24,35 +24,35 @@ const project = Astro.props;
         href={project.url}
         target='_blank'
         rel='noopener noreferrer'
-        class='link shadow-md outline-[6px] outline-offset-0 transition-[transform,box-shadow] duration-300 ease-out hover:shadow-xl motion-safe:hover:scale-105'>
+        class='link-primary rounded-sm shadow-md transition-[transform,scale,box-shadow] duration-300 ease-out hover:shadow-xl focus-visible:outline-[6px] motion-safe:hover:scale-105'>
         <Image
           src={project.thumbnail}
           alt={`${project.name} app thumbnail`}
-          class='aspect-video w-full rounded object-cover object-top'
+          class='aspect-video w-full rounded-sm object-cover object-top'
         />
       </a>
     : <Image
         src={project.thumbnail}
         alt={`${project.name} app thumbnail`}
-        class='aspect-video w-full rounded object-cover object-top shadow-md'
+        class='aspect-video w-full rounded-sm object-cover object-top shadow-md'
       />
   }
   <p class='p-1'>{project.description}</p>
   <section>
-    <details>
-      <summary class='link cursor-pointer px-1 marker:text-primary'>
+    <details class='details-transition'>
+      <summary class='link-primary marker:text-primary cursor-pointer px-1'>
         <h4 class='inline font-semibold'>Tech Stack</h4>
       </summary>
-      <ul class='flex flex-wrap gap-1 py-1 pl-4 text-sm'>
+      <ul class='flex flex-wrap gap-1 pt-2 pb-1 pl-4 text-sm'>
         {
           project.techStack.map((technologyKey) => {
             const technology = technologies[technologyKey];
 
             return (
-              <li class='flex items-center gap-1 rounded border border-solid bg-slate-50 px-2 py-1 shadow'>
+              <li class='flex items-center gap-1 rounded-sm border border-slate-200 bg-slate-50 px-2 py-1 shadow-sm'>
                 <Icon
                   name={technology.logo}
-                  class:list={['min-h-4 min-w-4 max-w-5', technology.class]}
+                  class:list={['min-h-4 max-w-5 min-w-4', technology.class]}
                 />
                 {technology.name}
               </li>
@@ -63,15 +63,15 @@ const project = Astro.props;
     </details>
   </section>
   <section>
-    <details>
-      <summary class='link cursor-pointer px-1 marker:text-primary'>
+    <details class='details-transition'>
+      <summary class='link-primary marker:text-primary cursor-pointer px-1'>
         <h4 class='inline font-semibold'>Features</h4>
       </summary>
       <ul class='py-1 pl-2 font-light'>
         {
           project.features.map((feature) => (
             <li class='flex'>
-              <Icon name='lucide:dot' class='size-[1.375rem] shrink-0 stroke-2' />
+              <Icon name='lucide:dot' class='size-5.5 shrink-0 stroke-2' />
               {feature}
             </li>
           ))
@@ -86,7 +86,7 @@ const project = Astro.props;
           href={project.url}
           target='_blank'
           rel='noopener noreferrer'
-          class='btn flex grow basis-1/2 items-center justify-center gap-1'>
+          class='btn-primary flex grow basis-1/2 items-center justify-center gap-1'>
           <Icon name='lucide:square-arrow-out-up-right' size={18} />
           Visit
         </a>
@@ -96,7 +96,7 @@ const project = Astro.props;
       href={project.repo}
       target='_blank'
       rel='noopener noreferrer'
-      class='btn flex grow basis-1/2 items-center justify-center gap-1'>
+      class='btn-primary flex grow basis-1/2 items-center justify-center gap-1'>
       <Icon name='lucide:github' size={18} />
       Repo
     </a>

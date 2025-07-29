@@ -1,1 +1,166 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'DM Sans Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 1000;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/dm-sans:vf@latest/latin-wght-normal.woff2)
+    format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304,
+    U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'DM Sans Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 1000;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/dm-sans:vf@latest/latin-ext-wght-normal.woff2)
+    format('woff2-variations');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308,
+    U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113,
+    U+2C60-2C7F, U+A720-A7FF;
+}
+
+@font-face {
+  font-family: 'Geist Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/geist:vf@latest/latin-wght-normal.woff2)
+    format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304,
+    U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Geist Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/geist:vf@latest/latin-ext-wght-normal.woff2)
+    format('woff2-variations');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308,
+    U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113,
+    U+2C60-2C7F, U+A720-A7FF;
+}
+
+@theme {
+  --color-primary: hsl(45, 100%, 50%);
+  --color-primary-darker: hsl(43, 100%, 49%);
+
+  --font-geist: 'Geist Variable', system-ui, sans-serif;
+  --font-dm-sans: 'DM Sans Variable', system-ui, sans-serif;
+
+  --ease-bounce: cubic-bezier(0.73, -0.83, 0.22, 1.75);
+
+  --animate-reveal-outer: reveal-outer 0.8s cubic-bezier(0.67, 0.12, 0.29, 0.97) backwards 0.2s;
+  --animate-reveal-inner: reveal-inner 0.8s cubic-bezier(0.67, 0.12, 0.29, 0.97) backwards 0.2s;
+
+  @keyframes reveal-outer {
+    0% {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes reveal-inner {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-geist;
+}
+
+p {
+  @apply text-justify text-pretty;
+}
+
+@utility btn-primary {
+  @apply hover:bg-primary-darker bg-primary outline-primary cursor-pointer rounded-sm px-6 py-2 text-center font-semibold shadow-sm outline-offset-[3px] duration-150 ease-out focus-visible:outline-4 active:scale-95! disabled:transform-none disabled:cursor-not-allowed disabled:opacity-50 motion-safe:transition-[transform,scale,opacity,background-color] motion-safe:will-change-transform motion-safe:hover:scale-105 motion-reduce:transition-[opacity,background-color];
+}
+
+@utility link-primary {
+  @apply outline-primary rounded-sm outline-offset-0 focus-visible:outline-[3px];
+}
+
+@utility input-primary {
+  @apply outline-primary rounded-sm border border-slate-200 bg-white px-4 py-2 text-base outline-offset-0 focus:outline-2;
+}
+
+@utility details-transition {
+  @apply details-content:h-0 details-content:overflow-hidden details-content:transition-[height,content-visibility] details-content:transition-discrete details-content:duration-300 details-content:ease-out open:details-content:h-auto details-content:motion-reduce:transition-none;
+}
+
+@utility slide-up {
+  @media (prefers-reduced-motion: no-preference) {
+    @apply noscript:is-visible translate-y-8 scale-95 opacity-0 blur-[7px];
+
+    transition:
+      opacity 0.5s ease,
+      filter 0.5s ease,
+      transform 0.5s cubic-bezier(0, 0, 0.2, 1),
+      translate 0.5s cubic-bezier(0, 0, 0.2, 1),
+      scale 0.5s cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+@utility is-visible {
+  @apply translate-y-0 scale-100 opacity-100 blur-none;
+}
+
+.content-grid,
+.full-width {
+  --padding-inline: 2rem;
+  --content-max-width: 65ch;
+  --breakout-max-width: 90ch;
+
+  --breakout-size: calc((var(--breakout-max-width) - var(--content-max-width)) / 2);
+
+  --full-width: minmax(var(--padding-inline), 1fr);
+  --breakout: minmax(0, var(--breakout-size));
+  --content: min(100% - var(--padding-inline) * 2, var(--content-max-width));
+
+  display: grid;
+  grid-template-columns:
+    [full-width-start] var(--full-width)
+    [breakout-start] var(--breakout)
+    [content-start] var(--content) [content-end]
+    var(--breakout) [breakout-end]
+    var(--full-width) [full-width-end];
+
+  & > :not(.breakout, .full-width) {
+    grid-column: content;
+  }
+
+  & > .breakout {
+    grid-column: breakout;
+  }
+
+  & > .full-width {
+    grid-column: full-width;
+  }
+
+  @media (max-width: 340px) {
+    --padding-inline: 1.2rem;
+  }
+}
