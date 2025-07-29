@@ -23,6 +23,7 @@ const project = Astro.props;
       <a
         href={project.url}
         target='_blank'
+        rel='noopener noreferrer'
         class='link shadow-md outline-[6px] outline-offset-0 transition-[transform,box-shadow] duration-300 ease-out hover:shadow-xl motion-safe:hover:scale-105'>
         <Image
           src={project.thumbnail}
@@ -84,6 +85,7 @@ const project = Astro.props;
         <a
           href={project.url}
           target='_blank'
+          rel='noopener noreferrer'
           class='btn flex grow basis-1/2 items-center justify-center gap-1'>
           <Icon name='lucide:square-arrow-out-up-right' size={18} />
           Visit
@@ -93,6 +95,7 @@ const project = Astro.props;
     <a
       href={project.repo}
       target='_blank'
+      rel='noopener noreferrer'
       class='btn flex grow basis-1/2 items-center justify-center gap-1'>
       <Icon name='lucide:github' size={18} />
       Repo

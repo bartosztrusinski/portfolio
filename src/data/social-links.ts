@@ -15,6 +15,14 @@ export const socialLinks: Link[] = [
     url: 'https://www.linkedin.com/in/bartosz-trusinski',
     icon: 'simple-icons:linkedin',
   },
-  { name: 'CV', url: '#', icon: 'lucide:file-user' },
-  { name: 'bartosz@trusinski.dev', url: 'mailto:bartosz@trusinski.dev', icon: 'lucide:mail' },
+  {
+    name: 'CV',
+    url: '#',
+    icon: 'lucide:file-user',
+  },
+  {
+    name: 'bartosz@trusinski.dev',
+    url: 'mailto:bartosz@trusinski.dev',
+    icon: 'lucide:mail',
+  },
 ];
