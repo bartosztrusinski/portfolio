@@ -96,7 +96,7 @@ p {
 }
 
 @utility btn-primary {
-  @apply hover:bg-primary-darker bg-primary outline-primary cursor-pointer rounded-sm px-6 py-2 text-center font-semibold shadow-sm outline-offset-[3px] duration-150 ease-out focus-visible:outline-4 active:scale-95! disabled:transform-none disabled:cursor-not-allowed disabled:opacity-50 motion-safe:transition-[transform,scale,opacity,background-color] motion-safe:will-change-transform motion-safe:hover:scale-105 motion-reduce:transition-[opacity,background-color];
+  @apply hover:bg-primary-darker bg-primary outline-primary selection:text-primary cursor-pointer rounded-sm px-6 py-2 text-center font-semibold shadow-sm outline-offset-[3px] duration-150 ease-out selection:bg-slate-900! focus-visible:outline-4 active:scale-95! disabled:transform-none disabled:cursor-not-allowed disabled:opacity-50 motion-safe:transition-[transform,scale,opacity,background-color] motion-safe:will-change-transform motion-safe:hover:scale-105 motion-reduce:transition-[opacity,background-color];
 }
 
 @utility link-primary {
