@@ -4,8 +4,8 @@
   --color-primary: hsl(45, 100%, 50%);
   --color-primary-darker: hsl(43, 100%, 49%);
 
-  --font-geist: 'Geist', system-ui, sans-serif;
-  --font-dm-sans: 'DM Sans', system-ui, sans-serif;
+  --font-geist: 'Geist Variable', system-ui, sans-serif;
+  --font-dm-sans: 'DM Sans Variable', system-ui, sans-serif;
 
   --ease-bounce: cubic-bezier(0.73, -0.83, 0.22, 1.75);
 

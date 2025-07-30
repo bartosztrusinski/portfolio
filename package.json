@@ -11,6 +11,8 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.4",
+    "@fontsource-variable/dm-sans": "^5.2.6",
+    "@fontsource-variable/geist": "^5.2.6",
     "@iconify-json/devicon": "^1.2.33",
     "@iconify-json/logos": "^1.2.5",
     "@iconify-json/lucide": "^1.2.58",
