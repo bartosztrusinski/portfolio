@@ -3,6 +3,7 @@ import '../styles/global.css';
 const title = 'Bartosz Trusiński | Frontend Developer Portfolio';
 const description =
   'Portfolio of Bartosz Trusiński - Frontend Developer specializing in modern web technologies and user-friendly applications';
+const url = 'https://trusinski.dev';
 ---
 
 <!doctype html>
@@ -12,23 +13,32 @@ const description =
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width' />
-    <meta name='generator' content={Astro.generator} />
     <title>{title}</title>
     <meta name='description' content={description} />
     <meta name='author' content='Bartosz Trusiński' />
     <meta name='theme-color' content='#F8FAFC' />
+
     <meta property='og:title' content={title} />
     <meta property='og:description' content={description} />
     <meta property='og:type' content='website' />
-    <meta property='og:url' content='https://trusinski.dev' />
+    <meta property='og:url' content={url} />
     <meta name='twitter:card' content='summary' />
     <meta name='twitter:title' content={title} />
     <meta name='twitter:description' content={description} />
+
+    <link rel='preconnect' href='https://fonts.googleapis.com' />
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+    <link
+      href='https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Geist:wght@100..900&display=swap'
+      rel='stylesheet'
+    />
+
     <link rel='icon' type='image/png' href='/favicon-96x96.png' sizes='96x96' />
     <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
     <link rel='shortcut icon' href='/favicon.ico' />
     <link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png' />
     <link rel='manifest' href='/site.webmanifest' />
+
     <script src='../lib/scroll-animations.ts'></script>
     <noscript>
       <style>
