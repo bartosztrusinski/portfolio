@@ -66,9 +66,9 @@ p {
 }
 
 @utility slide-up {
-  @media (prefers-reduced-motion: no-preference) {
-    @apply noscript:is-visible translate-y-8 scale-95 opacity-0 blur-[7px];
+  @apply noscript:is-visible motion-safe:translate-y-8 motion-safe:scale-95 motion-safe:opacity-0 motion-safe:blur-[7px] motion-safe:will-change-[transform,translate,scale,opacity,filter] noscript:will-change-auto;
 
+  @media (prefers-reduced-motion: no-preference) {
     transition:
       opacity 0.5s ease,
       filter 0.5s ease,
@@ -114,7 +114,7 @@ p {
     grid-column: full-width;
   }
 
-  @media (max-width: 340px) {
+  @media (max-width: 350px) {
     --padding-inline: 1.2rem;
   }
 }

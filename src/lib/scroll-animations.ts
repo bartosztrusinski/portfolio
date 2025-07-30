@@ -12,7 +12,18 @@ if ('IntersectionObserver' in window) {
     },
     { rootMargin: '-10% 0px -12% 0px' },
   );
-  animatedElements.forEach((element) => observer.observe(element));
+
+  animatedElements.forEach((element) => {
+    element.addEventListener('transitionend', () =>
+      element.classList.remove('slide-up', 'is-visible'),
+    );
+    observer.observe(element);
+  });
 } else {
-  animatedElements.forEach((element) => element.classList.add('is-visible'));
+  animatedElements.forEach((element) => {
+    element.addEventListener('transitionend', () =>
+      element.classList.remove('slide-up', 'is-visible'),
+    );
+    element.classList.add('is-visible');
+  });
 }
