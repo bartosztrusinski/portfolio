@@ -9,4 +9,8 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  image: {
+    layout: 'constrained',
+    responsiveStyles: true,
+  },
 });
