@@ -1,6 +1,8 @@
 ---
 import '@fontsource-variable/dm-sans';
 import '@fontsource-variable/geist';
+import geistLatin from '@fontsource-variable/geist/files/geist-latin-wght-normal.woff2?url';
+import dmSansLatin from '@fontsource-variable/dm-sans/files/dm-sans-latin-wght-normal.woff2?url';
 import '../styles/global.css';
 
 const title = 'Bartosz Trusiński | Frontend Developer Portfolio';
@@ -17,6 +19,10 @@ const url = 'https://trusinski.dev';
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width' />
     <title>{title}</title>
+
+    <link rel='preload' as='font' type='font/woff2' href={geistLatin} crossorigin='anonymous' />
+    <link rel='preload' as='font' type='font/woff2' href={dmSansLatin} crossorigin='anonymous' />
+
     <meta name='description' content={description} />
     <meta name='author' content='Bartosz Trusiński' />
     <meta name='theme-color' content='#F8FAFC' />
