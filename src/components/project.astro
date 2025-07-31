@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Picture } from 'astro:assets';
 import { Icon } from 'astro-icon/components';
 import type { Project } from '@/content.config';
 import { technologies } from '@/data/technologies';
@@ -13,11 +13,12 @@ const project = Astro.props;
   <h3 class='flex items-center gap-1 px-1 text-lg font-semibold'>
     {
       project.logo && (
-        <Image
+        <Picture
           src={project.logo}
           alt={`${project.name} logo`}
           widths={[20, 24, 30, 36]}
           sizes='1.25rem'
+          formats={['avif', 'webp']}
           class='inline size-5'
         />
       )
@@ -31,20 +32,22 @@ const project = Astro.props;
         target='_blank'
         rel='noopener noreferrer'
         class='link-primary rounded-sm shadow-md transition-[transform,scale,box-shadow] duration-300 ease-out hover:shadow-xl focus-visible:outline-[6px] motion-safe:hover:scale-105'>
-        <Image
+        <Picture
           src={project.thumbnail}
           alt={`${project.name} app thumbnail`}
           widths={[300, 334, 380, 500, 610, 750, 900]}
           sizes='(width >= 64rem) 334px, (width >= 40rem) 46vw, 90vw'
+          formats={['avif', 'webp']}
           position='top'
           class='aspect-video rounded-sm'
         />
       </a>
-    : <Image
+    : <Picture
         src={project.thumbnail}
         alt={`${project.name} app thumbnail`}
         widths={[300, 334, 380, 500, 610, 750, 900]}
         sizes='(width >= 64rem) 334px, (width >= 40rem) 46vw, 90vw'
+        formats={['avif', 'webp']}
         position='top'
         class='aspect-video rounded-sm shadow-md'
       />
