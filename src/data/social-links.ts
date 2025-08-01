@@ -17,7 +17,7 @@ export const socialLinks: Link[] = [
   },
   {
     name: 'CV',
-    url: '#',
+    url: '/bartosz-trusinski-cv.pdf',
     icon: 'lucide:file-user',
   },
   {
